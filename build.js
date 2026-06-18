@@ -116,8 +116,9 @@ ${logic}
 </html>`;
 
 fs.writeFileSync(OUT, html);
+fs.writeFileSync('index.html', html);   // identical copy used as the hosted entry (GitHub Pages)
 const kb=(Buffer.byteLength(html)/1024).toFixed(0);
-console.log('Wrote '+OUT+'  ('+kb+' KB)');
+console.log('Wrote '+OUT+' + index.html  ('+kb+' KB)');
 console.log('  CSS chars:',css.length,' body chars:',body.length,
   ' logo:',(logoLine.length/1024).toFixed(0)+'KB',' pimg:',(pimgLine.length/1024).toFixed(0)+'KB',
   ' data:',(dataJS.length/1024).toFixed(0)+'KB');

@@ -1,25 +1,37 @@
 # PepsiCo Pulse BI — Supply Chain & Commercial Intelligence
 
-> A self-contained, bilingual (English / العربية) executive **business-intelligence portal** for a PepsiCo-EMEA-style operation — built as a **single HTML file** with a live in-browser analytics engine, global slicers, and a natural-language assistant. No server, no database, no build step required to run it.
+**A boardroom-grade analytics portal for an EMEA beverages-and-snacks operation** — five interactive dashboards, three years of transactional data, and an assistant you can talk to, all living inside one HTML file you open with a double-click.
 
 <p align="center">
-  <img src="docs/screenshots/02-overview.png" alt="Executive Overview" width="900">
+  <a href="https://moataz-elmesmary.github.io/PepsiCo-Pulse-BI/"><b>▶ Open the live demo</b></a> &nbsp;·&nbsp; sign in with <code>moataz</code> / <code>moataz</code>
 </p>
 
 <p align="center">
-  <em>One file · 5 dashboards · 23,040 fact rows · 3 years of data · live filters · AR/EN · dark &amp; light</em>
+  <img src="docs/gifs/demo-filters.gif" alt="Live cross-filtering" width="880">
+  <br><em>Scope the whole portal to one region + one channel — every KPI, chart and insight re-derives on the spot.</em>
 </p>
 
 ---
 
-## ✨ Highlights
+## See it in motion
 
-- **5 role-based dashboards** — Executive Overview, Supply Chain, Revenue & Finance, Products, and Workforce.
-- **Live slicers / filters** — Year · Region · Channel · Category · Brand · Product. Every KPI, chart and insight **recomputes in the browser** the instant you change a filter (true cross-filtering, not pre-baked views).
-- **Smart NLP Assistant** — ask in English *or* Arabic. It looks up numbers, ranks (top/bottom), compares entities, describes trends, and can **drive the whole dashboard from a sentence** (e.g. *"show me E-commerce in Egypt"* filters every page).
-- **Bilingual & RTL** — full English/Arabic UI with right-to-left layout, plus dark/light themes.
-- **Realistic, multi-year synthetic data** — 3 years (2024–2026) with seasonality, channel/region mix, promotions and real YoY growth (~12.5%).
-- **Zero dependencies to host** — it's a static `.html` file. Drag it onto Netlify, push to GitHub Pages, or open it locally.
+**A tour of the five dashboards** — Overview, Supply Chain, Revenue & Finance, Products, Workforce:
+
+<p align="center"><img src="docs/gifs/demo-tour.gif" alt="Dashboard tour" width="880"></p>
+
+**Talk to your data.** Ask in English or Arabic — it answers from the live numbers, and can reshape the dashboard for you (*"show me E-commerce in Egypt"* filters every page):
+
+<p align="center"><img src="docs/gifs/demo-assistant.gif" alt="NLP assistant" width="880"></p>
+
+---
+
+## What's inside
+
+- **Five dashboards, a different audience each** — an executive snapshot, a supply-chain control tower, a finance & e-commerce view, a product-portfolio page, and a deep workforce / HR analytics screen.
+- **Everything cross-filters.** Pick any mix of Year, Region, Channel, Category, Brand or Product and the page re-derives itself from the raw rows — these are computed views, not pictures of pre-canned numbers.
+- **An assistant that understands the business.** Type a question and it pulls out the products, regions, channels and time periods you mentioned (in either language), then looks a figure up, ranks, compares, reads a trend, or applies the matching filter for you.
+- **Genuinely bilingual.** The entire interface mirrors into Arabic with full right-to-left layout; dark and light themes included.
+- **Three years of believable data.** 2024–2026 with category seasonality, channel and regional mix, promotions, and ~12.5% year-over-year growth — all reproducible from a single seeded generator.
 
 > 🔐 Demo login: **`moataz` / `moataz`**
 

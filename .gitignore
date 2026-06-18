@@ -1,5 +1,7 @@
-# local browser profile used for screenshots
+# local browser profile + frame scratch used for screenshots/gifs
 .chrome-tmp/
+.chrome-tmp2/
+.frames/
 
 # generation source art / legacy raw file (not needed to run or build)
 ChatGPT Image*.png
