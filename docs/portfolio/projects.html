@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<script>
+(function(){try{var t=localStorage.getItem('me-theme')||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}}());
+</script>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Projects - Moataz Elmesmary </title>
+        <link rel="icon" type="image/x-icon" href="assets/seo.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+<style id="dm">
+/* ============================
+   DARK MODE - complete overrides
+   ============================ */
+html[data-theme="dark"]{color-scheme:dark}
+html[data-theme="dark"] body{background:#07070f!important;color:#e2e8f0!important}
+html[data-theme="dark"] main{background:#07070f!important}
+
+/* Navbar */
+html[data-theme="dark"] #mainNav{background:rgba(4,4,12,.92)!important;border-bottom-color:rgba(99,102,241,.18)!important}
+html[data-theme="dark"] #mainNav.scrolled{background:rgba(4,4,12,.98)!important;box-shadow:0 4px 30px rgba(99,102,241,.14)!important}
+html[data-theme="dark"] .nav-link-custom{color:#b8bfd4!important}
+html[data-theme="dark"] .nav-link-custom:hover,html[data-theme="dark"] .nav-link-custom.active{color:#a78bfa!important}
+html[data-theme="dark"] #mainNav .navbar-collapse{background:rgba(6,6,16,.99)!important}
+html[data-theme="dark"] .navbar-toggler-icon{filter:invert(1)}
+
+/* Header / Hero */
+html[data-theme="dark"] header{background:#07070f!important}
+html[data-theme="dark"] .display-3{color:#f1f5f9!important}
+html[data-theme="dark"] .fs-3{color:#cbd5e1!important}
+html[data-theme="dark"] .fw-light{color:#94a3b8!important}
+
+/* Sections */
+html[data-theme="dark"] section,html[data-theme="dark"] .bg-light{background:#0a0a17!important}
+html[data-theme="dark"] section .lead{color:#94a3b8!important}
+html[data-theme="dark"] section .text-muted,html[data-theme="dark"] p.text-muted{color:#64748b!important}
+html[data-theme="dark"] section h2,html[data-theme="dark"] section h4,html[data-theme="dark"] section h5{color:#e2e8f0!important}
+html[data-theme="dark"] .display-5{color:#f1f5f9!important}
+
+/* Cards */
+html[data-theme="dark"] .card{background:#111128!important;border-color:rgba(99,102,241,.14)!important}
+html[data-theme="dark"] .card-body{background:#111128!important}
+html[data-theme="dark"] .card-body h5,html[data-theme="dark"] .card-body h2{color:#e2e8f0!important}
+html[data-theme="dark"] .card-body p,html[data-theme="dark"] .card-body li{color:#64748b!important}
+html[data-theme="dark"] .card.shadow:hover{box-shadow:0 20px 40px rgba(99,102,241,.18)!important}
+html[data-theme="dark"] .project-title{color:#e2e8f0!important}
+html[data-theme="dark"] .project-tech{color:#94a3b8!important}
+html[data-theme="dark"] .project-description{color:#64748b!important}
+html[data-theme="dark"] .project-image-container{background:#0a0a17!important}
+
+/* Badges */
+html[data-theme="dark"] .badge.bg-primary{background:#3730a3!important}
+html[data-theme="dark"] .badge.bg-light{background:#1e1e3a!important;color:#94a3b8!important}
+
+/* Resume specific */
+html[data-theme="dark"] .text-primary{color:#818cf8!important}
+html[data-theme="dark"] .list-group-item{background:#111128!important;border-color:rgba(99,102,241,.1)!important;color:#94a3b8!important}
+html[data-theme="dark"] hr{border-color:rgba(99,102,241,.1)!important}
+html[data-theme="dark"] .border{border-color:rgba(99,102,241,.15)!important}
+
+/* Contact form */
+html[data-theme="dark"] .form-control,html[data-theme="dark"] .form-select{background:#111128!important;border-color:rgba(99,102,241,.2)!important;color:#e2e8f0!important}
+html[data-theme="dark"] .form-control::placeholder{color:#475569!important}
+html[data-theme="dark"] .form-control:focus,html[data-theme="dark"] .form-select:focus{border-color:rgba(99,102,241,.5)!important;box-shadow:0 0 0 .25rem rgba(99,102,241,.15)!important;background:#111128!important;color:#e2e8f0!important}
+html[data-theme="dark"] .form-label{color:#94a3b8!important}
+html[data-theme="dark"] .contact-card{background:#0a0a17!important}
+
+/* About section images */
+html[data-theme="dark"] .rounded-4.border-0{border-color:rgba(99,102,241,.12)!important}
+
+/* Footer always dark */
+.wow-footer,.wow-footer *{color-scheme:dark}
+
+/* Theme toggle button */
+.nav-theme-btn{width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(41,55,240,.22);background:transparent;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:1rem;color:#2937f0;transition:all .3s cubic-bezier(.175,.885,.32,1.275);padding:0;line-height:1;flex-shrink:0}
+.nav-theme-btn:hover{background:linear-gradient(135deg,rgba(41,55,240,.1),rgba(159,26,226,.1));border-color:rgba(41,55,240,.5);transform:rotate(20deg) scale(1.1)}
+html[data-theme="dark"] .nav-theme-btn{color:#fbbf24;border-color:rgba(251,191,36,.28)}
+html[data-theme="dark"] .nav-theme-btn:hover{background:rgba(251,191,36,.1);border-color:rgba(251,191,36,.5)}
+
+/* Smooth transitions for theme switch */
+body,header,section,.card,.card-body,.form-control,.nav-link-custom,#mainNav,.bg-light{transition:background-color .3s ease,color .25s ease,border-color .25s ease!important}
+</style>
+<style id="unav">
+#mainNav{background:rgba(255,255,255,.85);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-bottom:1px solid rgba(41,55,240,.08);position:sticky;top:0;z-index:999;transition:background .3s,box-shadow .3s}
+#mainNav.scrolled{background:rgba(255,255,255,.97);box-shadow:0 4px 30px rgba(41,55,240,.1)}
+#mainNav::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#2937f0,#9f1ae2,#ff6b6b,#ffd700,#00d4ff,#2937f0);background-size:300% 100%;animation:navBarSlide 4s linear infinite}
+@keyframes navBarSlide{0%{background-position:0% 0}100%{background-position:300% 0}}
+.nav-brand-custom{display:flex;align-items:center;gap:8px;text-decoration:none}
+.nav-brand-text{font-size:1.15rem;font-weight:800;letter-spacing:-.5px;background:linear-gradient(135deg,#2937f0,#9f1ae2);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.nav-brand-icon{font-size:1.1rem;background:linear-gradient(135deg,#2937f0,#9f1ae2);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:iconSpin 6s ease-in-out infinite}
+@keyframes iconSpin{0%,100%{transform:rotate(0deg)}50%{transform:rotate(15deg) scale(1.1)}}
+.nav-link-custom{position:relative;font-size:.85rem;font-weight:600;color:#333!important;padding:8px 14px!important;border-radius:8px;transition:color .25s,background .25s;letter-spacing:.2px;text-decoration:none!important}
+.nav-link-custom span{position:relative;z-index:1}
+.nav-link-custom::before{content:'';position:absolute;inset:0;border-radius:8px;background:linear-gradient(135deg,rgba(41,55,240,.08),rgba(159,26,226,.08));opacity:0;transition:opacity .25s}
+.nav-link-custom:hover,.nav-link-custom.active{color:#2937f0!important}
+.nav-link-custom:hover::before,.nav-link-custom.active::before{opacity:1}
+.nav-link-custom::after{content:'';position:absolute;bottom:2px;left:50%;width:0;height:2px;background:linear-gradient(90deg,#2937f0,#9f1ae2);border-radius:2px;transition:width .3s;transform:translateX(-50%);display:block}
+.nav-link-custom:hover::after,.nav-link-custom.active::after{width:70%}
+.nav-cta-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 20px;border-radius:25px;background:linear-gradient(135deg,#2937f0,#9f1ae2);color:#fff!important;font-size:.83rem;font-weight:700;letter-spacing:.3px;text-decoration:none;transition:all .3s cubic-bezier(.175,.885,.32,1.275);box-shadow:0 4px 18px rgba(41,55,240,.3);position:relative;overflow:hidden}
+.nav-cta-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#9f1ae2,#2937f0);opacity:0;transition:opacity .3s}
+.nav-cta-btn:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 8px 28px rgba(41,55,240,.45);color:#fff!important}
+.nav-cta-btn:hover::before{opacity:1}
+.nav-cta-btn span,.nav-cta-btn i{position:relative;z-index:1}
+.nav-cta-btn i{transition:transform .3s}
+.nav-cta-btn:hover i{transform:translateX(4px)}
+.tog-line{display:block;width:22px;height:2px;background:linear-gradient(90deg,#2937f0,#9f1ae2);border-radius:2px;transition:all .3s;margin:2px 0}
+@media(max-width:991px){
+  #mainNav .navbar-collapse{background:rgba(255,255,255,.98);margin-top:12px;padding:16px;border-radius:14px;box-shadow:0 10px 30px rgba(41,55,240,.1)}
+  #mainNav .navbar-nav{gap:4px}
+  .nav-link-custom{padding:10px 14px!important}
+  .nav-link-custom::after{display:none!important}
+  .nav-cta-btn{margin-top:8px;justify-content:center;width:100%}
+  .nav-theme-btn{margin-top:8px}
+}
+html[data-theme="dark"] #mainNav .navbar-collapse{background:rgba(6,6,16,.99)!important}
+html[data-theme="dark"] .tog-line{background:linear-gradient(90deg,#818cf8,#a78bfa)}
+</style>
+<style id="footer-css">
+/* ===== EPIC FOOTER (shared) ===== */
+.wow-footer{background:#03030a;position:relative;overflow:hidden}
+.wow-footer::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#2937f0 20%,#9f1ae2 40%,#ff6b6b 55%,#ffd700 70%,#00d4ff 85%,transparent);background-size:200% 100%;animation:borderSlide 4s linear infinite}
+@keyframes borderSlide{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.wf-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+.wf-orb-1{width:400px;height:400px;background:rgba(41,55,240,.12);top:-100px;left:-100px;animation:orbf 12s ease-in-out infinite}
+.wf-orb-2{width:350px;height:350px;background:rgba(159,26,226,.1);bottom:-80px;right:-80px;animation:orbf 15s ease-in-out infinite reverse}
+.wf-orb-3{width:200px;height:200px;background:rgba(0,212,255,.08);top:50%;left:50%;transform:translate(-50%,-50%);animation:orbf 10s ease-in-out infinite}
+@keyframes orbf{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-30px)}}
+.wf-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:50px 50px}
+.wf-inner{padding:70px 0 45px;position:relative;z-index:1}
+.wf-brand{font-size:1.8rem;font-weight:900;background:linear-gradient(90deg,#6366f1,#a855f7,#ec4899);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:inline-block;filter:drop-shadow(0 0 20px rgba(168,85,247,.4))}
+.wf-tagline{font-size:.68rem;color:#777;letter-spacing:4px;text-transform:uppercase;margin-top:6px}
+.wf-desc{font-size:.8rem;color:#888;margin-top:16px;line-height:1.9;max-width:240px}
+.wf-status{display:inline-flex;align-items:center;gap:8px;background:rgba(0,255,136,.06);border:1px solid rgba(0,255,136,.2);border-radius:20px;padding:6px 14px;font-size:.7rem;color:#00ff88;margin-top:18px;letter-spacing:1px;animation:statusPulse 3s ease-in-out infinite}
+@keyframes statusPulse{0%,100%{box-shadow:0 0 0 0 rgba(0,255,136,.3)}50%{box-shadow:0 0 0 6px rgba(0,255,136,0)}}
+.wf-status-dot{width:7px;height:7px;background:#00ff88;border-radius:50%;animation:ldot 1.5s ease-in-out infinite;flex-shrink:0}
+@keyframes ldot{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.8);opacity:.4}}
+.wf-heading{font-size:.6rem;letter-spacing:4px;text-transform:uppercase;color:#888;margin-bottom:20px;font-weight:700}
+.wf-nav{list-style:none;padding:0;margin:0}
+.wf-nav li{margin-bottom:12px}
+.wf-nav a{color:#777;text-decoration:none;font-size:.84rem;transition:all .3s;display:inline-flex;align-items:center;gap:6px}
+.wf-nav a::before{content:'\25B8';opacity:0;transform:translateX(-6px);transition:all .3s;font-size:.7rem;color:#9f1ae2}
+.wf-nav a:hover{color:#c084fc;padding-left:14px}
+.wf-nav a:hover::before{opacity:1;transform:translateX(0)}
+.wf-socials{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.wf-sbtn{display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.1);color:#888;text-decoration:none;font-size:.78rem;transition:all .35s cubic-bezier(.175,.885,.32,1.275);background:rgba(255,255,255,.02);position:relative;overflow:hidden}
+.wf-sbtn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(99,102,241,.15),rgba(168,85,247,.15));opacity:0;transition:opacity .3s}
+.wf-sbtn:hover{border-color:rgba(168,85,247,.4);color:#fff;transform:translateY(-3px) scale(1.03);box-shadow:0 8px 28px rgba(168,85,247,.25)}
+.wf-sbtn:hover::before{opacity:1}
+.wf-sbtn i{font-size:1.1rem}
+.wf-marquee-wrap{position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);padding:14px 0}
+.wf-marquee-wrap::before,.wf-marquee-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2}
+.wf-marquee-wrap::before{left:0;background:linear-gradient(90deg,#03030a,transparent)}
+.wf-marquee-wrap::after{right:0;background:linear-gradient(-90deg,#03030a,transparent)}
+.wf-marquee{display:flex;gap:30px;width:max-content;animation:marqueeSlide 25s linear infinite}
+.wf-marquee:hover{animation-play-state:paused}
+@keyframes marqueeSlide{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.wf-chip{display:inline-flex;align-items:center;gap:7px;font-size:.72rem;color:#888;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:5px 14px;white-space:nowrap;letter-spacing:1px;transition:all .3s}
+.wf-chip:hover{color:#c084fc;border-color:rgba(168,85,247,.3);background:rgba(168,85,247,.08)}
+.wf-chip i{font-size:.85rem;color:#888}
+.wf-divider{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);margin:0}
+.wf-bottom{padding:20px 0;text-align:center;font-size:.72rem;color:#777;background:#020208;position:relative;z-index:1}
+.wf-bottom .gt{background:linear-gradient(90deg,#6366f1,#a855f7);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:700}
+.wf-bottom a{color:#666;text-decoration:none;transition:color .25s}
+.wf-bottom a:hover{color:#a855f7}
+.heart{display:inline-block;color:#ec4899;animation:heartBeat .8s ease-in-out infinite}
+@keyframes heartBeat{0%,100%{transform:scale(1)}50%{transform:scale(1.3)}}
+@media(max-width:767px){
+  .wf-inner{padding:40px 0 25px!important}
+  .wf-brand{font-size:1.4rem!important}
+  .wf-desc{max-width:100%!important}
+  .wf-socials{grid-template-columns:1fr 1fr!important;gap:8px!important}
+  .wf-sbtn{padding:10px 12px!important;font-size:.72rem!important}
+  .wf-bottom{font-size:.65rem!important;padding:16px 12px!important;line-height:1.8}
+}
+@media(max-width:480px){.wf-socials{grid-template-columns:1fr!important}}
+</style>
+<script src="js/theme.js"></script>
+
+        <style>
+            /* Project Card Styles - Improved */
+            .project-image-container {
+                overflow: hidden;
+                border-radius: 0.5rem 0.5rem 0 0;
+                position: relative;
+                height: 320px; /* Increased height for images */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #f8f9fa; /* Light background for image area */
+            }
+
+            .project-image-container img {
+                max-width: 95%;
+                max-height: 300px; /* Increased height for images */
+                object-fit: contain; /* Prevent cropping */
+                transition: transform 0.4s ease;
+            }
+
+            .project-image-container:hover img {
+                transform: scale(1.05);
+            }
+
+            /* Special case for card 2 - double image display */
+            .two-images-container {
+                display: flex;
+                flex-direction: column;
+                height: 320px;
+                justify-content: space-around;
+                align-items: center;
+            }
+
+            .two-images-container img {
+                max-width: 95%;
+                max-height: 150px; /* Half height for each image */
+                margin: 5px 0;
+            }
+
+            .project-content {
+                padding: 1rem;
+                height: 200px; /* Reduced height for content area */
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .project-title {
+                font-size: 1.2rem;
+                margin-bottom: 0.3rem;
+                line-height: 1.2;
+                font-weight: 700;
+                height: 2.5rem; /* Reduced height for title */
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+
+            .project-tech {
+                font-size: 0.85rem;
+                margin-bottom: 0.3rem;
+                color: #6c757d;
+                font-weight: 600;
+                height: 1.3rem; /* Reduced height for tech stack */
+                overflow: hidden;
+            }
+
+            .project-description {
+                font-size: 0.85rem;
+                flex-grow: 1;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 2; /* Reduced to 2 lines */
+                -webkit-box-orient: vertical;
+                margin-bottom: 0.5rem;
+            }
+
+            .project-actions {
+                margin-top: auto;
+            }
+
+            /* Equal height cards */
+            .project-card {
+                height: 100%;
+                margin-bottom: 1.5rem;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .project-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+
+            /* Responsive adjustments */
+            @media (max-width: 767.98px) {
+                .project-content {
+                    height: auto;
+                }
+            }
+
+            /* Section styling */
+            .py-5 {
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
+            }
+
+            /* Call to action gradient */
+            .bg-gradient-primary-to-secondary {
+                background: linear-gradient(45deg, #2937f0, #9f1ae2) !important;
+            }
+
+            /* Button styling */
+            .project-button {
+                font-size: 0.85rem;
+                padding: 0.5rem 1rem;
+            }
+
+            /* Text gradient for headers */
+            .text-gradient {
+                background: linear-gradient(45deg, #2937f0, #9f1ae2);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        </style>
+    <style id="nav-underline-fix">
+.nav-link-custom { overflow: visible !important; }
+.nav-link-custom::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 0 !important;
+    height: 2px !important;
+    background: linear-gradient(90deg,#2937f0,#9f1ae2) !important;
+    border-radius: 2px !important;
+    transition: width .3s ease !important;
+    display: block !important;
+    opacity: 1 !important;
+}
+.nav-link-custom:hover::after,
+.nav-link-custom.active::after {
+    width: calc(100% - 20px) !important;
+}
+html[data-theme="dark"] .nav-link-custom::after {
+    background: linear-gradient(90deg,#818cf8,#a78bfa) !important;
+}
+</style>
+</head>
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- UNIFIED NAVBAR -->
+                        <nav class="navbar navbar-expand-lg py-0" id="mainNav">
+                <div class="container px-5" style="padding-top:14px;padding-bottom:14px;">
+                    <a class="navbar-brand nav-brand-custom" href="index.html">
+                        <span class="nav-brand-text">Moataz Elmesmary</span>
+                        <i class="bi bi-code-slash nav-brand-icon"></i>
+                    </a>
+                    <button class="navbar-toggler border-0 d-flex flex-column gap-1 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="tog-line"></span><span class="tog-line"></span><span class="tog-line"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-1">
+                            <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html"><span>Home</span></a></li>
+                            <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html#About me"><span>About Me</span></a></li>
+                            <li class="nav-item"><a class="nav-link nav-link-custom" href="resume.html"><span>Resume</span></a></li>
+                            <li class="nav-item"><a class="nav-link nav-link-custom active" href="projects.html"><span>Projects</span></a></li>
+                            <li class="nav-item ms-lg-2"><a class="nav-cta-btn" href="contact.html"><span>Contact</span> <i class="bi bi-arrow-right"></i></a></li>
+                            <li class="nav-item ms-lg-1"><button id="theme-toggle" class="nav-theme-btn" onclick="toggleTheme()" title="Switch to Dark Mode" aria-label="Toggle dark mode"><i class="bi bi-moon-stars-fill"></i></button></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <section class="py-5">
+                <div class="container px-4 px-lg-5">
+                    <div class="text-center mb-5">
+                        <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Projects</span></h1>
+                        <br>
+                        <h5>A sample of the projects I've been working on</h5>
+                    </div>
+
+                    <!-- ===== PepsiCo Pulse BI (featured) ===== -->
+                    <div class="row gx-4 gy-5">
+                        <div class="col-12 mb-5">
+                            <div class="card shadow rounded-4 border-0 project-card" style="background:linear-gradient(135deg,#04122b,#0a1f3f);border:1px solid rgba(0,164,228,.22)!important;overflow:hidden;">
+                                <div class="row g-0 align-items-stretch">
+
+                                    <!-- Animated demo -->
+                                    <div class="col-lg-7" style="position:relative;min-height:300px;background:#04122b;">
+                                        <a href="https://moataz-elmesmary.github.io/PepsiCo-Pulse-BI/" target="_blank" style="display:block;width:100%;height:100%;">
+                                            <img src="https://moataz-elmesmary.github.io/PepsiCo-Pulse-BI/docs/gifs/demo-tour.gif" alt="PepsiCo Pulse BI live demo" style="width:100%;height:100%;min-height:300px;object-fit:cover;object-position:top left;display:block;">
+                                        </a>
+                                        <div style="position:absolute;top:12px;left:14px;z-index:5;display:inline-flex;align-items:center;gap:7px;background:rgba(4,18,43,.82);border:1px solid rgba(29,185,84,.35);border-radius:20px;padding:4px 11px;">
+                                            <span style="width:7px;height:7px;border-radius:50%;background:#1db954;display:inline-block;"></span>
+                                            <span style="font:600 9px monospace;color:#1db954;letter-spacing:.08em;">LIVE DEMO</span>
+                                        </div>
+                                        <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 70%,rgba(4,18,43,.6) 100%);pointer-events:none;"></div>
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="col-lg-5">
+                                        <div class="card-body p-4 p-lg-5" style="background:linear-gradient(135deg,#04122b,#0a1f3f);height:100%;display:flex;flex-direction:column;">
+                                            <h2 class="project-title" style="color:#eaf1ff;height:auto;">PepsiCo Pulse BI
+                                                <span style="font-size:.7rem;background:linear-gradient(90deg,#00a4e4,#7c5cfc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;letter-spacing:1px;">&middot; Live</span>
+                                            </h2>
+                                            <p class="project-tech" style="color:#00a4e4;font-size:.85rem;"><b>JavaScript &middot; Chart.js &middot; Trained NLP model &middot; EN/AR</b></p>
+                                            <p class="project-description" style="color:#94a6cc;font-size:.86rem;-webkit-line-clamp:5;">
+                                                A single-file EMEA business-intelligence portal: five interactive dashboards, live slicers that re-derive every KPI and chart on the spot, three years of data, and a bilingual (English/Arabic) NLP assistant (a trained intent model, 99.8% accuracy) that answers questions and filters the whole dashboard from a sentence.
+                                            </p>
+                                            <div style="display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 14px;">
+                                                <span class="badge border" style="font-size:.68rem;padding:5px 10px;border-radius:20px;background:rgba(0,164,228,.1);color:#38bdf8;border-color:rgba(56,189,248,.3)!important;">Live filters</span>
+                                                <span class="badge border" style="font-size:.68rem;padding:5px 10px;border-radius:20px;background:rgba(124,92,252,.12);color:#a78bfa;border-color:rgba(124,92,252,.3)!important;">NLP assistant</span>
+                                                <span class="badge border" style="font-size:.68rem;padding:5px 10px;border-radius:20px;background:rgba(29,185,84,.1);color:#1db954;border-color:rgba(29,185,84,.3)!important;">Bilingual / RTL</span>
+                                            </div>
+                                            <div class="project-actions" style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;">
+                                                <a class="btn btn-sm" href="https://moataz-elmesmary.github.io/PepsiCo-Pulse-BI/" target="_blank" style="background:linear-gradient(135deg,#0E63C9,#00a4e4);color:#fff;font-size:.8rem;border-radius:20px;padding:7px 18px;font-weight:600;">Live Demo <i class="bi bi-box-arrow-up-right"></i></a>
+                                                <a class="btn btn-sm" href="https://github.com/Moataz-Elmesmary/PepsiCo-Pulse-BI" target="_blank" style="background:transparent;color:#cbd5e1;border:1px solid rgba(148,166,204,.4);font-size:.8rem;border-radius:20px;padding:7px 18px;font-weight:600;">GitHub <i class="bi bi-github"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row gx-4 gy-5">
+                        <!-- Transactions &amp; Supply Chain Analytics - Donors + FreeMart -->
+                        <div class="col-md-6 col-lg-6 mb-5">
+                            <div class="card shadow rounded-4 border-0 h-100 project-card" style="background:linear-gradient(135deg,#060d1a,#0a1a2e);border:1px solid rgba(56,189,248,.2)!important;overflow:hidden;">
+
+                                <!-- Image Slideshow -->
+                                <div class="project-image-container" style="height:320px;position:relative;overflow:hidden;background:#060d1a;">
+
+                                    <!-- Slide 0 -->
+                                    <div id="efb-img-0" style="position:absolute;inset:0;transition:opacity 1s ease;opacity:1;display:flex;align-items:center;justify-content:center;">
+                                        <img src="https://i.ibb.co/sphv0z6Z/Gemini-Generated-Image-682d8h682d8h682d.png" alt="efb slide 0" style="max-width:95%;max-height:300px;object-fit:contain;object-position:center;transition:transform .4s ease;">
+                                    </div>
+
+                                    <!-- Slide 1 -->
+                                    <div id="efb-img-1" style="position:absolute;inset:0;transition:opacity 1s ease;opacity:0;display:flex;align-items:center;justify-content:center;">
+                                        <img src="https://i.ibb.co/wT9S2L3/Gemini-Generated-Image-fz8ma4fz8ma4fz8m.png" alt="efb slide 1" style="max-width:95%;max-height:300px;object-fit:contain;object-position:center;transition:transform .4s ease;">
+                                    </div>
+
+                                    <!-- Bottom gradient -->
+                                    <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(6,13,26,.9) 100%);z-index:2;pointer-events:none;"></div>
+
+                                    <!-- Ticker -->
+                                    <div style="position:absolute;top:0;left:0;right:0;z-index:5;background:rgba(6,13,26,.8);backdrop-filter:blur(4px);border-bottom:1px solid rgba(56,189,248,.18);padding:5px 0;overflow:hidden;white-space:nowrap;">
+                                        <div style="display:inline-block;animation:tickerScroll 25s linear infinite;font:600 9px monospace;color:#38bdf8;letter-spacing:.06em;">
+                                            &nbsp;&nbsp;&nbsp;&#9889; POWER BI EXECUTIVE DASHBOARD &nbsp;&middot;&nbsp; NODE.JS BACKEND &nbsp;&middot;&nbsp; SQL SERVER INDEXED &nbsp;&middot;&nbsp; 20+ REGIONS &nbsp;&middot;&nbsp; REAL-TIME KPIs &nbsp;&middot;&nbsp; DONOR INTELLIGENCE &nbsp;&middot;&nbsp; SUPPLY CHAIN ANALYTICS &nbsp;&middot;&nbsp; &#9889; POWER BI EXECUTIVE DASHBOARD &nbsp;&middot;&nbsp;
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide dots + label -->
+                                    <div style="position:absolute;bottom:12px;left:14px;z-index:5;display:flex;align-items:center;gap:8px;">
+                                        <div id="efb-dot-0" style="width:20px;height:3px;border-radius:99px;background:#38bdf8;transition:all .4s;"></div>
+                                        <div id="efb-dot-1" style="width:6px;height:3px;border-radius:99px;background:rgba(255,255,255,.25);transition:all .4s;"></div>
+                                        <span id="efb-lbl" style="font:600 9px monospace;color:#38bdf8;letter-spacing:.08em;margin-left:4px;">DONORS INTEL</span>
+                                    </div>
+
+                                    <div style="position:absolute;bottom:12px;right:14px;z-index:5;background:rgba(6,13,26,.75);border:1px solid rgba(100,116,139,.3);border-radius:20px;padding:4px 10px;">
+                                        <span style="font:600 9px monospace;color:#64748b;">&#128274; CONFIDENTIAL</span>
+                                    </div>
+                                </div>
+
+                                <div class="card-body p-4 project-content" style="background:linear-gradient(135deg,#060d1a,#0a1a2e);">
+                                    <h2 class="project-title" style="color:#e2e8f0;">Transactions &amp; Supply Chain Analytics
+                                        <span style="font-size:.7rem;background:linear-gradient(90deg,#38bdf8,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;letter-spacing:1px;">&middot; Production</span>
+                                    </h2>
+                                    <p class="project-tech" style="color:#38bdf8;font-size:.85rem;"><b>Power BI &middot; Node.js &middot; SQL Server &middot; DAX &middot; Express.js</b></p>
+                                    <p class="project-description" style="color:#64748b;font-size:.85rem;">
+                                        Two production systems: a custom Node.js donor intelligence platform and a Power BI supply chain executive dashboard.
+                                        Multi-source SQL Server backend with custom indexing reducing query time from minutes to seconds across millions of records.
+                                    </p>
+                                    <div class="project-actions" style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;">
+                                        <span class="badge border" style="font-size:.7rem;padding:5px 11px;border-radius:20px;background:rgba(56,189,248,.1);color:#38bdf8;border-color:rgba(56,189,248,.3)!important;">Power BI</span>
+                                        <span class="badge border" style="font-size:.7rem;padding:5px 11px;border-radius:20px;background:rgba(129,140,248,.1);color:#818cf8;border-color:rgba(129,140,248,.3)!important;">Node.js</span>
+                                        <span class="badge border" style="font-size:.7rem;padding:5px 11px;border-radius:20px;background:rgba(56,189,248,.1);color:#38bdf8;border-color:rgba(56,189,248,.3)!important;">SQL Server</span>
+                                        <span class="badge border" style="font-size:.7rem;padding:5px 11px;border-radius:20px;background:rgba(129,140,248,.1);color:#818cf8;border-color:rgba(129,140,248,.3)!important;">DAX</span>
+                                        <span class="badge border" style="font-size:.7rem;padding:5px 11px;border-radius:20px;background:rgba(100,116,139,.08);color:#64748b;border-color:rgba(100,116,139,.2)!important;">&#128274; Confidential</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- HR Analytics Dashboard (El Ezaby - dummy data) -->
+                        <div class="col-md-6 col-lg-6 mb-5">
+
+                            <div class="card shadow rounded-4 border-0 h-100 project-card">
+                                <div class="project-image-container">
+                                    <a>
+                                        <img class="img-fluid" src="https://moataz-elmesmary.github.io/PepsiCo-Pulse-BI/docs/portfolio/hr-analytics.png" alt="HR Analytics & Workforce Intelligence" />
+                                    </a>
+                                </div>
+                                <div class="card-body p-4 project-content">
+                                    <h2 class="project-title">HR Analytics &amp; Workforce Intelligence</h2>
+                                    <p class="project-tech"><b>Power BI | SAP | DWH | DAX | HR KPIs</b></p>
+                                    <p class="project-description">End-to-end HR analytics solution for a retail chain with 470+ branches. Covers HC/FTE tracking, resignation analysis, insurance claims, workforce planning vs. actual with DOD performance evaluation. All figures shown are dummy / synthetic data for demonstration only.</p>
+                                    <div class="project-actions">
+                                        <span class="badge bg-warning text-dark me-2" style="font-size:.72rem;padding:6px 12px;border-radius:20px;">Dummy data (synthetic)</span>
+                                        <span class="badge bg-light text-muted border" style="font-size:.72rem;padding:6px 12px;border-radius:20px;">El Ezaby Pharmacies</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                    </div>
+
+                    <div class="row gx-4 gy-5">
+                        <div class="col-md-6 col-lg-6 mb-5">
+                            <div class="card shadow rounded-4 border-0 h-100 project-card">
+                                <div class="project-image-container">
+                                    <a href="https://github.com/Moataz-Elmesmary/VF-EG-E-commerce-Logistics-Case-Study" target="_blank">
+                                        <img class="img-fluid" src="https://i.postimg.cc/wBjQ2M2g/6v.png" alt="Vodafone Project Image" />
+                                    </a>
+                                </div>
+                                <div class="card-body p-4 project-content">
+                                    <h2 class="project-title">E-commerce Logistics Performance Analysis </h2>
+                                    <p class="project-tech"><b>Power Query | KPIs | Recommendations based on Insights</b></p>
+                                    <p class="project-description">Vodafone EG Technical Assessment - A Case Study that simulates real-life data for e-commerce logistics operations. working with Orders, Deliveries, and Products.</p>
+                                    <div class="project-actions">
+                                        <a class="btn btn-outline-primary btn-sm project-button ms-2" href="https://drive.google.com/file/d/1pv5cr_Yl6Qvey-9_9MU0qSLC3UbUztmo/view?usp=sharing" target="_blank">
+                                             Presentation
+                                        <a class="btn btn-outline-primary btn-sm project-button ms-2" href="https://github.com/Moataz-Elmesmary/VF-EG-E-commerce-Logistics-Case-Study" target="_blank">Details <i class="bi bi-github"></i></a>
+
+
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-6 mb-5">
+                            <div class="card shadow rounded-4 border-0 h-100 project-card">
+                                <div class="project-image-container">
+                                    <a href="https://github.com/Moataz-Elmesmary/ITI-Examination-System-Graduation-Project" target="_blank">
+                                        <div class="project-image-container">
+                                            <img class="img-fluid" src="https://i.postimg.cc/vBpKCf2W/sample1.png" alt="ITI GRAD PROJ" />
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card-body p-4 project-content">
+                                    <h2 class="project-title">ITI Examination & Business Intelligence System</h2>
+                                    <p class="project-tech"><b>ERD | Mapping | SQL | SSIS | DWH | SSRS | Power BI</b></p>
+                                    <p class="project-description">A revolutionary end-to-end solution designed to transform how ITI manages its academic operations. not just building a database - we're crafting a complete ecosystem that handles everything from student registration to advanced business intelligence.</p>
+                                    <div class="project-actions">
+                                        <a class="btn btn-outline-dark btn-sm project-button" href="https://github.com/Moataz-Elmesmary/ITI-Examination-System-Graduation-Project" target="_blank">GitHub <i class="bi bi-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row gx-4 gy-5">
+                        <div class="col-md-6 col-lg-6 mb-5">
+                            <div class="card shadow rounded-4 border-0 h-100 project-card">
+                                <div class="project-image-container">
+                                    <a href="https://github.com/Moataz-Elmesmary/US-Airlines-Delay-Analysis" target="_blank">
+                                        <img class="img-fluid" src="https://i.postimg.cc/DzzBsjCd/1.png" alt="" />
+                                    </a>
+                                </div>
+                                <div class="card-body p-4 project-content">
+                                    <h2 class="project-title">US Airlines Delay Analysis</h2>
+                                    <p class="project-tech"><b>Power BI | Modeling | SQL</b></p>
+                                    <p class="project-description">Comprehensive analysis of flight delays, uncovering patterns, identifying root causes, and highlighting KPIs related to airline and airport efficiency.</p>
+                                    <div class="project-actions">
+                                        <a class="btn btn-outline-dark btn-sm project-button" href="https://github.com/Moataz-Elmesmary/US-Airlines-Delay-Analysis" target="_blank">GitHub <i class="bi bi-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-6 mb-5">
+                            <div class="card shadow rounded-4 border-0 h-100 project-card">
+                                <div class="project-image-container">
+                                    <a href="https://github.com/Moataz-Elmesmary/Egyptian-Mobile-Store-Sales-Analysis" target="_blank">
+                                        <div class="project-image-container">
+                                            <img class="img-fluid" src="https://i.postimg.cc/yYjYd0B5/tryrtytr.png" alt="Egyptian Mobile Store Sales Analysis - Image 1" />
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card-body p-4 project-content">
+                                    <h2 class="project-title">Egyptian Mobile Store Sales Analysis</h2>
+                                    <p class="project-tech"><b>Excel | DAX</b></p>
+                                    <p class="project-description">An end-to-end sales analytics solution analyzing 160M+ EGP across 12+ branches. Developed 15+ DAX measures and uncovered key business insights.</p>
+                                    <div class="project-actions">
+                                        <a class="btn btn-outline-dark btn-sm project-button" href="https://github.com/Moataz-Elmesmary/Egyptian-Mobile-Store-Sales-Analysis" target="_blank">GitHub <i class="bi bi-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row gx-4 gy-5">
+                        <div class="col-md-6 col-lg-6 mb-5">
+                            <div class="card shadow rounded-4 border-0 h-100 project-card">
+                                <div class="project-image-container">
+                                    <a href="https://public.tableau.com/app/profile/moataz.elemsmary/viz/SuperstoreProject_17464565209490/Dashboard1" target="_blank">
+                                        <img class="img-fluid" src="https://i.postimg.cc/Xv75qnTK/111.png" alt="Superstore Sales & Customer Analytics" />
+                                    </a>
+                                </div>
+                                <div class="card-body p-4 project-content">
+                                    <h2 class="project-title">Superstore Sales & Customer Analytics</h2>
+                                    <p class="project-tech"><b>Tableau</b></p>
+                                    <p class="project-description">KPIs, trends, and product/customer insights with drill-down capabilities.</p>
+                                    <div class="project-actions">
+                                        <a class="btn btn-outline-dark btn-sm project-button"
+                                           href="https://public.tableau.com/app/profile/moataz.elemsmary/viz/SuperstoreProject_17464565209490/Dashboard1"
+                                           target="_blank">
+                                            Tableau <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png"
+                                                      alt="Tableau Logo"
+                                                      style="height: 15px; margin-left: 5px;">
+                                        </a>
+                                        <a class="btn btn-outline-primary btn-sm project-button ms-2" href="https://github.com/Moataz-Elmesmary/Superstore-Dashboard-Using-Tableau" target="_blank">Details <i class="bi bi-github"></i></a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-6 mb-5">
+                            <div class="card shadow rounded-4 border-0 h-100 project-card">
+                                <div class="project-image-container">
+                                    <a href="https://github.com/Moataz-Elmesmary/Power-BI-Project" target="_blank">
+                                        <div class="project-image-container">
+                                            <img class="img-fluid" src="https://i.postimg.cc/ZqYWPySh/1.png" alt="Sales & Products & Customers Analytics - Image 1" />
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card-body p-4 project-content">
+                                    <h2 class="project-title">Sales & Customers Analytics</h2>
+                                    <p class="project-tech"><b>Power BI | Modeling | DAX</b></p>
+                                    <p class="project-description">Comprehensive sales analytics, featuring DirectQuery implementation, Data Modeling, advanced DAX measures, and interactive visualizations.</p>
+                                    <div class="project-actions">
+                                        <a class="btn btn-outline-dark btn-sm project-button" href="https://github.com/Moataz-Elmesmary/Power-BI-Project" target="_blank">GitHub <i class="bi bi-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row gx-4 gy-5">
+                        <div class="col-md-6 col-lg-6 mb-5">
+                            <div class="card shadow rounded-4 border-0 h-100 project-card">
+                                <div class="project-image-container">
+                                    <a href="https://github.com/Moataz-Elmesmary/PowerPI-Project" target="_blank">
+                                        <img class="img-fluid" src="https://i.postimg.cc/yYp4tj7V/1.png" alt="PowerBI project (Sales Company)" />
+                                    </a>
+                                </div>
+                                <div class="card-body p-4 project-content">
+                                    <h2 class="project-title">PowerBI project (Sales Company)</h2>
+                                    <p class="project-tech"><b>Power BI | DAX</b></p>
+                                    <p class="project-description">Dynamic dashboards with clean data transformation for real-time insights.</p>
+                                    <div class="project-actions">
+                                        <a class="btn btn-outline-dark btn-sm project-button" href="https://github.com/Moataz-Elmesmary/PowerPI-Project" target="_blank">GitHub <i class="bi bi-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-6 mb-5">
+                            <div class="card shadow rounded-4 border-0 h-100 project-card">
+                                <div class="project-image-container">
+                                    <a href="https://github.com/Moataz-Elmesmary/Apriori-Algorithm-and-Association-Rule-Mining" target="_blank">
+                                        <img class="img-fluid" src="https://i.postimg.cc/CKmjsRj6/Top20-Lift-Network-Graph.png" alt="Egyptian Grocery Market Basket Analysis" />
+                                    </a>
+                                </div>
+                                <div class="card-body p-4 project-content">
+                                    <h2 class="project-title">Egyptian Grocery Market Basket Analysis</h2>
+                                    <p class="project-tech"><b>Python | Pandas | Apriori algorithm</b></p>
+                                    <p class="project-description">Association rules with support, confidence, lift metrics. Network graph for top 20 rules.</p>
+                                    <div class="project-actions">
+                                        <a class="btn btn-outline-dark btn-sm project-button" href="https://github.com/Moataz-Elmesmary/Apriori-Algorithm-and-Association-Rule-Mining" target="_blank">GitHub <i class="bi bi-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row gx-4 gy-5">
+                        <div class="col-md-6 col-lg-6 mb-5">
+                            <div class="card shadow rounded-4 border-0 h-100 project-card">
+                                <div class="project-image-container">
+                                    <a href="https://github.com/Exous-Team/README" target="_blank">
+                                        <img class="img-fluid" src="https://i.postimg.cc/qv9RV4pM/280400077-5624a07f-eb0c-472b-a992-c5e850183db5.jpg" alt="Smart Upper-Exoskeleton" />
+                                    </a>
+                                </div>
+                                <div class="card-body p-4 project-content">
+                                    <h2 class="project-title">Smart Upper-Exoskeleton for Patients with Paralysis</h2>
+                                    <p class="project-tech"><b>Computer Vision | Speech Recognition | Team Leader</b></p>
+                                    <p class="project-description">YOLOv7 detection, Mask RCNN segmentation, and Whisper OpenAI voice recognition.</p>
+                                    <div class="project-actions">
+                                        <a class="btn btn-outline-dark btn-sm project-button" href="https://github.com/Exous-Team/README" target="_blank">GitHub <i class="bi bi-github"></i></a>
+                                        <a class="btn btn-outline-primary btn-sm project-button ms-2" href="https://www.youtube.com/watch?v=J7khKzDMe1c" target="_blank">Video <i class="bi bi-youtube"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-6 mb-5">
+                            <div class="card shadow rounded-4 border-0 h-100 project-card">
+                                <div class="project-image-container">
+                                    <a href="https://github.com/Moataz-Elmesmary/Egyptian-Mobile-Store-Sales-Analysis" target="_blank">
+                                        <img class="img-fluid" src="https://i.postimg.cc/jSjqJCSj/fsdfsd.png" alt="Superstore Sales Dashboard" />
+                                    </a>
+                                </div>
+                                <div class="card-body p-4 project-content">
+                                    <h2 class="project-title">Sales & Customers Dashboard</h2>
+                                    <p class="project-tech"><b>Excel | DAX</b></p>
+                                    <p class="project-description">Sales efficiency analytics with performance, segmentation, and profitability insights.</p>
+                                    <div class="project-actions">
+                                        <a class="btn btn-outline-dark btn-sm project-button" href="https://github.com/Moataz-Elmesmary/Egyptian-Mobile-Store-Sales-Analysis" target="_blank">GitHub <i class="bi bi-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                                                <div class="row gx-4 gy-5">
+                        <div class="col-md-6 col-lg-6 mb-5">
+                            <div class="card shadow rounded-4 border-0 h-100 project-card">
+                                <div class="project-image-container">
+                                    <a href="https://github.com/Moataz-Elmesmary/Genomics-Project" target="_blank">
+                                        <img class="img-fluid" src="https://i.postimg.cc/MpR2ZbgQ/Capture-1.png" alt="PowerBI project (Sales Company)" />
+                                    </a>
+                                </div>
+                                <div class="card-body p-4 project-content">
+                                    <h2 class="project-title">Diabetes Prediction (Web App Based on ML)</h2>
+                                    <p class="project-tech"><b>Data Preprocessing | Machine Learning | Model Deployment</b></p>
+                                    <p class="project-description">Preprocessed data and trained a Random Forest model (85% accuracy).
+Deployed the model using Flask for real-time predictions.</p>
+                                    <div class="project-actions">
+                                        <a class="btn btn-outline-dark btn-sm project-button" href="https://github.com/Moataz-Elmesmary/Genomics-Project" target="_blank">GitHub <i class="bi bi-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-6 mb-5">
+                            <div class="card shadow rounded-4 border-0 h-100 project-card">
+                                <div class="project-image-container">
+                                    <a href="https://github.com/Moataz-Elmesmary/Image-Processing-Signature-Restoration-" target="_blank">
+                                        <img class="img-fluid" src="https://i.postimg.cc/cJ4p7yrQ/167227169-8c39f0ef-9b9a-4313-9d50-8fad7f2b8ba9-1.jpg" alt="Egyptian Grocery Market Basket Analysis" />
+                                    </a>
+                                </div>
+                                <div class="card-body p-4 project-content">
+                                    <h2 class="project-title">Signature Restoration</h2>
+                                    <p class="project-tech"><b>Image Preprocessing | Matlab</b></p>
+                                    <p class="project-description"> </p>
+                                    <div class="project-actions">
+                                        <a class="btn btn-outline-dark btn-sm project-button" href="https://github.com/Moataz-Elmesmary/Image-Processing-Signature-Restoration-" target="_blank">GitHub <i class="bi bi-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row gx-4 gy-5">
+                        </div>
+                </div>
+            </section>
+
+            <section class="py-5 bg-gradient-primary-to-secondary text-white">
+                <div class="container px-5 my-5">
+                    <div class="text-center">
+                        <h2 class="display-4 fw-bolder mb-4">Let's build something together</h2>
+                        <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="contact.html">Contact me</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- EPIC FOOTER -->
+<footer class="wow-footer mt-auto">
+    <div class="wf-orb wf-orb-1"></div>
+    <div class="wf-orb wf-orb-2"></div>
+    <div class="wf-orb wf-orb-3"></div>
+    <div class="wf-grid"></div>
+    <div class="wf-marquee-wrap">
+        <div class="wf-marquee" id="wfm">
+            <span class="wf-chip"><i class="bi bi-database"></i> SQL</span>
+            <span class="wf-chip"><i class="bi bi-bar-chart-fill"></i> Power BI</span>
+            <span class="wf-chip"><i class="bi bi-code-slash"></i> Python</span>
+            <span class="wf-chip"><i class="bi bi-table"></i> Tableau</span>
+            <span class="wf-chip"><i class="bi bi-lightning-fill"></i> Power Automate</span>
+            <span class="wf-chip"><i class="bi bi-grid-3x3-gap"></i> Power Apps</span>
+            <span class="wf-chip"><i class="bi bi-filetype-xlsx"></i> Excel</span>
+            <span class="wf-chip"><i class="bi bi-hdd-stack"></i> DWH</span>
+            <span class="wf-chip"><i class="bi bi-github"></i> Git</span>
+            <span class="wf-chip"><i class="bi bi-cpu"></i> Machine Learning</span>
+            <span class="wf-chip"><i class="bi bi-graph-up"></i> Metabase</span>
+            <span class="wf-chip"><i class="bi bi-boxes"></i> NoSQL</span>
+            <span class="wf-chip"><i class="bi bi-database"></i> SQL</span>
+            <span class="wf-chip"><i class="bi bi-bar-chart-fill"></i> Power BI</span>
+            <span class="wf-chip"><i class="bi bi-code-slash"></i> Python</span>
+            <span class="wf-chip"><i class="bi bi-table"></i> Tableau</span>
+            <span class="wf-chip"><i class="bi bi-lightning-fill"></i> Power Automate</span>
+            <span class="wf-chip"><i class="bi bi-grid-3x3-gap"></i> Power Apps</span>
+            <span class="wf-chip"><i class="bi bi-filetype-xlsx"></i> Excel</span>
+            <span class="wf-chip"><i class="bi bi-hdd-stack"></i> DWH</span>
+            <span class="wf-chip"><i class="bi bi-github"></i> Git</span>
+            <span class="wf-chip"><i class="bi bi-cpu"></i> Machine Learning</span>
+            <span class="wf-chip"><i class="bi bi-graph-up"></i> Metabase</span>
+            <span class="wf-chip"><i class="bi bi-boxes"></i> NoSQL</span>
+        </div>
+    </div>
+    <div class="wf-inner">
+        <div class="container px-5">
+            <div class="row gy-5">
+                <div class="col-lg-4">
+                    <div class="wf-brand">Moataz Elmesmary <i class="bi bi-code-slash"></i></div>
+                    <div class="wf-tagline">BI Developer &amp; Data Analyst</div>
+                    <p class="wf-desc">Turning raw data into actionable insights. Open to freelance &amp; full-time opportunities worldwide.</p>
+                    <div class="wf-status"><span class="wf-status-dot"></span>Available for opportunities</div>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <div class="wf-heading">Navigate</div>
+                    <ul class="wf-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#About me">About Me</a></li>
+                        <li><a href="resume.html">Resume</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <div class="wf-heading">Legal</div>
+                    <ul class="wf-nav">
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/terms.html">Terms of Use</a></li>
+                    </ul>
+                    <div class="wf-heading mt-4">Stats</div>
+                    <ul class="wf-nav">
+                        <li><a href="https://github.com/Moataz-Elmesmary/Data-Science-Roadmap" target="_blank">&#11088; 4,300+ GitHub Stars</a></li>
+                        <li><a href="#">&#127860; 600+ Forks</a></li>
+                        <li><a href="#">&#128104;&#8205;&#127979; 70+ Mentees</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <div class="wf-heading">Connect With Me</div>
+                    <div class="wf-socials">
+                        <a href="https://github.com/Moataz-Elmesmary" target="_blank" class="wf-sbtn"><i class="bi bi-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/moatazelmesmary/" target="_blank" class="wf-sbtn"><i class="bi bi-linkedin"></i> LinkedIn</a>
+                        <a href="https://api.whatsapp.com/send?phone=201000033506" target="_blank" class="wf-sbtn"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+                        <a href="https://x.com/MoatazElmesmary" target="_blank" class="wf-sbtn"><i class="bi bi-twitter-x"></i> Twitter/X</a>
+                        <a href="mailto:moataz.mesmary@gmail.com" target="_blank" class="wf-sbtn"><i class="bi bi-envelope-fill"></i> Email</a>
+                        <a href="https://github.com/Moataz-Elmesmary/Data-Science-Roadmap" target="_blank" class="wf-sbtn"><i class="bi bi-map"></i> DS Roadmap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="wf-divider">
+    <div class="wf-bottom">
+        &copy; 2026 <span class="gt">Moataz Elmesmary</span>
+        &nbsp;&middot;&nbsp; All rights reserved
+        &nbsp;&middot;&nbsp; Made with <span class="heart">&#9829;</span> &amp; lots of data
+        &nbsp;&middot;&nbsp; <a href="/privacy.html">Privacy</a>
+        &nbsp;&middot;&nbsp; <a href="/terms.html">Terms</a>
+    </div>
+</footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/scripts.js"></script>
+
+<script>
+(function(){
+    var nav = document.getElementById('mainNav');
+    if(nav) window.addEventListener('scroll', function(){
+        if(window.scrollY > 40) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+    });
+})();
+</script>
+<script>(function(){var n=document.getElementById('mainNav');if(n)window.addEventListener('scroll',function(){n.classList.toggle('scrolled',window.scrollY>40);});})();</script>
+
+<script>
+(function(){
+    var cur=0,total=2;
+    var imgs=[document.getElementById('efb-img-0'),document.getElementById('efb-img-1')];
+    var dots=[document.getElementById('efb-dot-0'),document.getElementById('efb-dot-1')];
+    var lbls=['DONORS INTEL','FREEMART SUPPLY'];
+    var lbl=document.getElementById('efb-lbl');
+    if(!imgs[0]||!imgs[1]) return;
+    setInterval(function(){
+        if(imgs[0]) imgs[cur].style.opacity='0';
+        if(dots[cur]){dots[cur].style.width='6px';dots[cur].style.background='rgba(255,255,255,.25)';}
+        cur=(cur+1)%total;
+        if(imgs[cur]) imgs[cur].style.opacity='1';
+        if(dots[cur]){dots[cur].style.width='20px';dots[cur].style.background='#38bdf8';}
+        if(lbl) lbl.textContent=lbls[cur];
+    },2500);
+})();
+</script>
+</body>
+</html>
