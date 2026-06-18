@@ -43,17 +43,31 @@ const VW = 1366, VH = 800, FPS = 9;
     fs.writeFileSync(path.join(TMP, 'f_' + String(fi++).padStart(4, '0') + '.png'), Buffer.from(r.data, 'base64'));
   }
   function freshTmp() { fs.rmSync(TMP, { recursive: true, force: true }); fs.mkdirSync(TMP, { recursive: true }); fi = 0; }
-  async function scene(name, plan) {
-    freshTmp();
-    for (const s of plan) { if (s.do) await evalJS(s.do); for (let k = 0; k < s.hold; k++) { await sleep(s.ms || 110); await shot(); } }
+  function encode(name, width, maxc) {
+    width = width || 1040; maxc = maxc || 0;
+    const pal = maxc ? `palettegen=max_colors=${maxc}:stats_mode=diff` : 'palettegen=stats_mode=diff';
     execFileSync(FFMPEG, ['-y', '-framerate', String(FPS), '-i', path.join(TMP, 'f_%04d.png'),
-      '-vf', 'scale=1040:-1:flags=lanczos,split[s0][s1];[s0]palettegen=stats_mode=diff[p];[s1][p]paletteuse=dither=bayer:bayer_scale=3',
+      '-vf', `scale=${width}:-1:flags=lanczos,split[s0][s1];[s0]${pal}[p];[s1][p]paletteuse=dither=bayer:bayer_scale=4`,
       path.join(OUT, name + '.gif')], { stdio: 'ignore' });
     const kb = (fs.statSync(path.join(OUT, name + '.gif')).size / 1024).toFixed(0);
     console.log('  ' + name + '.gif (' + fi + ' frames, ' + kb + ' KB)');
   }
+  async function scene(name, plan) {
+    freshTmp();
+    for (const s of plan) { if (s.do) await evalJS(s.do); for (let k = 0; k < s.hold; k++) { await sleep(s.ms || 110); await shot(); } }
+    encode(name);
+  }
 
-  // Scene 1 — tour across the five dashboards
+  // Scene 0 - the animated login screen (floating products + parallax)
+  freshTmp();
+  for (let k = 0; k < 26; k++) {
+    const x = 150 + (k / 26) * 1200, y = 400 + Math.sin(k / 3) * 220;
+    await send('Input.dispatchMouseEvent', { type: 'mouseMoved', x, y });
+    await sleep(120); await shot();
+  }
+  encode('demo-login', 820, 128);   // smaller + fewer colours: lighter file for the README
+
+  // Scene 1 - tour across the five dashboards
   await scene('demo-tour', [
     { do: "enterPortal()", hold: 3, ms: 300 },
     { do: "go('overview')", hold: 13 },
@@ -64,17 +78,17 @@ const VW = 1366, VH = 800, FPS = 9;
     { do: "go('overview')", hold: 6 },
   ]);
 
-  // Scene 2 — live slicing on the Overview
+  // Scene 2 - live slicing on the Overview (visibly reshapes KPIs + the donut)
   await scene('demo-filters', [
-    { do: "resetFilters();go('overview')", hold: 7 },
-    { do: "toggleDrop('regions')", hold: 7 },
-    { do: "toggleOpt('regions',6,true)", hold: 11 },
+    { do: "resetFilters();go('overview')", hold: 8 },
     { do: "toggleDrop('channels')", hold: 7 },
-    { do: "toggleOpt('channels',ECOM_CH,true)", hold: 13 },
+    { do: "toggleOpt('channels',3,true)", hold: 13 },     // Foodservice -> beverages mix jumps
+    { do: "toggleDrop('regions')", hold: 7 },
+    { do: "toggleOpt('regions',3,true)", hold: 13 },      // Germany & DACH -> snacks rise
     { do: "resetFilters()", hold: 9 },
   ]);
 
-  // Scene 3 — the NLP assistant answering, then driving the dashboard
+  // Scene 3 - the NLP assistant answering, then driving the dashboard
   await scene('demo-assistant', [
     { do: "resetFilters();go('assistant')", hold: 5 },
     { do: "askAssistant('top 5 products by revenue')", hold: 12 },

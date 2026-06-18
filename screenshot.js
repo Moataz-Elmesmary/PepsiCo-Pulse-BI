@@ -1,5 +1,5 @@
 // Capture real screenshots of each dashboard page via Chrome DevTools Protocol.
-// No external deps — uses Node's global fetch + WebSocket + child_process.
+// No external deps - uses Node's global fetch + WebSocket + child_process.
 const { spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');

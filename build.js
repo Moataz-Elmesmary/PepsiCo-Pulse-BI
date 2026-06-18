@@ -34,18 +34,19 @@ body=body.replace('<div class="content">',
 // ---- extra CSS for the filter bar ----
 const filterCSS=`
 /* ---------- FILTER BAR ---------- */
-.filter-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 22px;
-  background:var(--panel);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:25;
-  backdrop-filter:blur(8px)}
-.fbar-ico{font-size:1rem;opacity:.7}
+.filter-bar{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:11px 22px;
+  background:linear-gradient(180deg,var(--card),var(--panel));border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:25;backdrop-filter:blur(8px);box-shadow:0 6px 18px -14px rgba(0,0,0,.6)}
+.fbar-label{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:.8rem;letter-spacing:.3px;
+  color:var(--cyan);text-transform:uppercase;padding-inline-end:4px}
 .fdrop{position:relative}
-.fdrop-btn{display:flex;align-items:center;gap:7px;padding:8px 14px;border-radius:30px;cursor:pointer;
-  background:var(--card2);border:1px solid var(--line);color:var(--text);font-size:.82rem;font-weight:600;
+.fdrop-btn{display:flex;align-items:center;gap:8px;padding:8px 15px;border-radius:30px;cursor:pointer;
+  background:var(--card2);border:1.5px solid var(--line);color:var(--text);font-size:.82rem;font-weight:600;
   font-family:inherit;transition:.15s}
-.fdrop-btn:hover{border-color:var(--cyan)}
+.fdrop-btn:hover{border-color:var(--cyan);background:rgba(0,164,228,.10)}
 .fdrop.on .fdrop-btn{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;border-color:transparent;
-  box-shadow:0 6px 16px -6px var(--cyan)}
-.fdrop-btn .caret{font-size:.7rem;opacity:.8}
+  box-shadow:0 6px 16px -6px var(--cyan);font-weight:700}
+.fdrop-btn .caret{font-size:.7rem;opacity:.85}
 .fdrop-menu{position:absolute;top:calc(100% + 8px);inset-inline-start:0;min-width:210px;max-height:320px;overflow:auto;
   background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
   padding:8px;z-index:60;display:none;animation:fpop .14s ease}
@@ -75,6 +76,10 @@ html[dir="rtl"] .fdrop-menu{inset-inline-start:auto;inset-inline-end:0}
 .msg.bot{line-height:1.7}
 `;
 
+// ---- trained NLP model + shared lexicon ----
+const lexSrc=fs.readFileSync('nlp/lexicon.js','utf8');
+const nlpModel=fs.readFileSync('nlp/nlp_model.json','utf8');
+
 // ---- application JS (data globals + logic) ----
 const logic=fs.readFileSync('portal_logic.js','utf8');
 const dataJS=
@@ -85,7 +90,7 @@ const dataJS=
   `const GAP=${JSON.stringify(pd.GAP)};\n`;
 
 // ---- final document ----
-const html=`<!DOCTYPE html>
+let html=`<!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="dark">
 <head>
 <meta charset="UTF-8">
@@ -109,12 +114,16 @@ ${pimgLine}
 ${logoLine}
 /* ===== DATA (generated · multi-year EMEA facts) ===== */
 ${dataJS}
+/* ===== NLP: shared lexicon + trained intent classifier ===== */
+${lexSrc}
+const NLP_MODEL=${nlpModel};
 /* ===== APPLICATION LOGIC ===== */
 ${logic}
 </script>
 </body>
 </html>`;
 
+html=html.replace(/[—–]/g,'-');   // strip em/en dashes from the output
 fs.writeFileSync(OUT, html);
 fs.writeFileSync('index.html', html);   // identical copy used as the hosted entry (GitHub Pages)
 const kb=(Buffer.byteLength(html)/1024).toFixed(0);

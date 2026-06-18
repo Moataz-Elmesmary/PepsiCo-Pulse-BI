@@ -42,10 +42,12 @@ global.Intl=Intl;
 
 const DIM=pd.DIM,FACTS=pd.FACTS,INV=pd.INV,WORK=pd.WORK,GAP=pd.GAP;
 const PIMG={pepsi:'x'},LOGO_FULL='',LOGO_MARK='';
+const NLPLEX=require('./nlp/lexicon');
+const NLP_MODEL=JSON.parse(fs.readFileSync('./nlp/nlp_model.json','utf8'));
 let src=fs.readFileSync('./portal_logic.js','utf8');
-src+='\nglobalThis.__api={enterPortal,go,renderPanel,applyFilters,resetFilters,toggleLang,toggleTheme,FILTER,buildFilterBar,toggleDrop,askAssistant,nlpAnswer,nlpApply};';
-const run=new Function('DIM','FACTS','INV','WORK','GAP','PIMG','LOGO_FULL','LOGO_MARK',src);
-try{ run(DIM,FACTS,INV,WORK,GAP,PIMG,LOGO_FULL,LOGO_MARK); }
+src+='\nglobalThis.__api={enterPortal,go,renderPanel,applyFilters,resetFilters,toggleLang,toggleTheme,FILTER,buildFilterBar,toggleDrop,askAssistant,nlpAnswer,nlpApply,nlpClassify};';
+const run=new Function('DIM','FACTS','INV','WORK','GAP','PIMG','LOGO_FULL','LOGO_MARK','NLPLEX','NLP_MODEL',src);
+try{ run(DIM,FACTS,INV,WORK,GAP,PIMG,LOGO_FULL,LOGO_MARK,NLPLEX,NLP_MODEL); }
 catch(e){ console.error('LOAD ERROR:',e.message); process.exit(1); }
 const A=globalThis.__api;
 
@@ -81,6 +83,32 @@ const queries=[
 console.log('\nNLP answers:');
 queries.forEach(q=>{ try{ console.log('  Q: '+q+'\n   → '+strip(A.nlpAnswer(q)).slice(0,180)); }
   catch(e){ console.error('   NLP ERR ['+q+']: '+e.message); errors.push('nlp:'+q); } });
+
+// ---- hand-written intent eval (paraphrases NOT in the training templates) ----
+const evalSet=[
+  ['how much money did we make last year','value'],
+  ['whats our profit margin for snacks','value'],
+  ['give me the revenue of pepsi in egypt','value'],
+  ['which 3 products sell the most','rank'],
+  ['worst performing regions','rank'],
+  ['pepsi or mirinda, who wins on profit','compare'],
+  ['egypt against turkey revenue','compare'],
+  ['how has revenue moved this year','trend'],
+  ['breakdown of sales by category','share'],
+  ['zoom into the gulf region','filter'],
+  ['just show me doritos','filter'],
+  ['hey there','smalltalk'],
+  ['كام الإيراد بتاعنا','value'],
+  ['ايه أكتر 5 منتجات مبيعاً','rank'],
+  ['قارن بيبسي وسفن أب','compare'],
+  ['وريني السناكس في ألمانيا','filter'],
+  ['الإيراد بيزيد ولا بيقل','trend'],
+  ['ازيك عامل ايه','smalltalk'],
+];
+let ic=0;console.log('\nIntent accuracy on hand-written paraphrases:');
+evalSet.forEach(([q,exp])=>{const p=A.nlpClassify(q);const ok=p.intent===exp;if(ok)ic++;
+  if(!ok)console.log(`  MISS "${q}"  exp ${exp} got ${p.intent} (${(p.conf*100).toFixed(0)}%)`);});
+console.log(`  -> ${ic}/${evalSet.length} = ${(ic/evalSet.length*100).toFixed(1)}%`);
 
 step('assistant flow (askAssistant)', ()=>A.askAssistant('top 3 regions by net profit'));
 step('toggleLang->ar', ()=>A.toggleLang());

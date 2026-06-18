@@ -1,5 +1,5 @@
 // ============================================================================
-// PepsiCo Pulse BI — synthetic-but-realistic data generator
+// PepsiCo Pulse BI - synthetic-but-realistic data generator
 // Deterministic (seeded) so the build is reproducible. No external libs.
 // Grain of the sales fact: (yearIdx, month0-11, productIdx, regionIdx, channelIdx)
 //   -> units. Revenue/COGS are derived from dims at aggregation time.
@@ -66,6 +66,21 @@ const SEASON = {
   Foods:     [1.10,1.08,1.02,0.98,0.94,0.90,0.88,0.90,0.98,1.06,1.12,1.14],
 };
 
+// category affinity by CHANNEL (index = channel) and REGION (index = region) so a
+// slicer visibly reshapes the category mix (and is more realistic):
+//  - Foodservice & e-commerce skew to beverages; traditional trade to snacks
+//  - hot regions (Türkiye/Levant/Gulf) skew to beverages; Europe to snacks/foods
+const CAT_CHANNEL = {
+  Beverages: [1.00, 0.92, 1.18, 1.50],
+  Snacks:    [1.12, 1.34, 0.82, 0.52],
+  Foods:     [1.04, 0.78, 1.26, 0.62],
+};
+const CAT_REGION = {
+  Beverages: [0.86, 0.98, 0.92, 0.82, 1.00, 1.22, 1.34, 1.28],
+  Snacks:    [1.30, 1.06, 1.18, 1.34, 1.10, 0.82, 0.76, 0.84],
+  Foods:     [1.18, 1.00, 1.12, 1.24, 1.04, 0.88, 0.82, 0.90],
+};
+
 // ---- generate sales facts ----
 // columnar parallel arrays kept tiny: only units stored per row
 const fY=[], fM=[], fP=[], fR=[], fC=[], fU=[];
@@ -81,7 +96,7 @@ for (let y=0; y<YEARS.length; y++){
         // compound YoY growth: region + channel + product drift, with noise
         const yearGrow = Math.pow(1 + rG + cG*0.4 + (prodTrend-1), y);
         for (let m=0; m<12; m++){
-          let u = base * rW * cW * season[m] * yearGrow;
+          let u = base * rW * cW * season[m] * yearGrow * CAT_CHANNEL[cat][c] * CAT_REGION[cat][r];
           u *= 1 + jit(-0.14, 0.14);                    // monthly noise
           // occasional promo spike
           if (R() < 0.06) u *= jit(1.15, 1.5);

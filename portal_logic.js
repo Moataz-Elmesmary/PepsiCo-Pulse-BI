@@ -1,5 +1,5 @@
 /* ============================================================================
-   PepsiCo Pulse BI — application logic (live aggregation + filters + render)
+   PepsiCo Pulse BI - application logic (live aggregation + filters + render)
    Depends on injected globals: DIM, FACTS, INV, WORK, GAP, LOGO_*, PIMG
    ========================================================================== */
 
@@ -112,7 +112,7 @@ function compute(){
     .sort((a,b)=>a.daysCover-b.daysCover).slice(0,12)
     .map(r=>({p:PRODUCTS[r.p].n+' · '+r.loc,h:r.onHand,d:r.daysCover,
       s:r.daysCover<8?'crit':r.daysCover<15?'warn':'watch'}));
-  if(!stockouts.length)stockouts=[{p:'—',h:0,d:0,s:'watch'}];
+  if(!stockouts.length)stockouts=[{p:'-',h:0,d:0,s:'watch'}];
 
   /* e-commerce funnel from ecom revenue */
   const aov=+ (14+ (tRev?ecomRev/Math.max(ecomU,1):0)*1.2).toFixed(1);
@@ -129,7 +129,7 @@ function compute(){
   const wkLatest=WORK.filter(w=>w.y===curWY);
   const deptMap={};wkLatest.filter(w=>w.m===11).forEach(w=>{deptMap[w.dept]=(deptMap[w.dept]||0)+w.headcount;});
   depts=Object.entries(deptMap).map(([n,v])=>({n,v}));
-  if(!depts.length)depts=[{n:'—',v:0}];
+  if(!depts.length)depts=[{n:'-',v:0}];
 
   /* turnover trend = monthly resign/headcount averaged across selected years */
   turnTrend=Array(12).fill(0).map((_,m)=>{
@@ -229,7 +229,7 @@ function enterPortal(){
   compute();buildFilterBar();buildChips();renderPanel('overview');
 }
 const TITLES={
- overview:['Executive Overview','نظرة عامة تنفيذية','Live snapshot · FY2024–2026','لقطة حية · ٢٠٢٤–٢٠٢٦'],
+ overview:['Executive Overview','نظرة عامة تنفيذية','Live snapshot · FY2024-2026','لقطة حية · ٢٠٢٤-٢٠٢٦'],
  supply:['Supply Chain','سلسلة الإمداد','Stock, OTIF, replenishment · MAKE & MOVE','المخزون، التسليم، التموين'],
  revenue:['Revenue & Finance','الإيرادات والمالية','Revenue, COGS, profit, e-commerce','الإيراد، التكلفة، الربح، التجارة'],
  products:['Products','المنتجات','Portfolio performance & market share','أداء المحفظة والحصة السوقية'],
@@ -261,7 +261,7 @@ const FDEFS=[
 ];
 function buildFilterBar(){
   const bar=document.getElementById('filterBar');if(!bar)return;const en=LANG==='en';
-  let h='<span class="fbar-ico">⚙</span>';
+  let h='<span class="fbar-label"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg>'+(en?'Filters':'الفلاتر')+'</span>';
   FDEFS.forEach(([key,lbl,lblAr])=>{
     const sel=FILTER[key];const cnt=sel.size;
     const label=(en?lbl:lblAr)+(cnt?' · '+cnt:'');
@@ -447,7 +447,7 @@ function buildChips(){
 }
 
 /* ============================================================================
-   NLP SMART ASSISTANT — entity + intent engine over the live data
+   NLP SMART ASSISTANT - entity + intent engine over the live data
    ========================================================================== */
 function addMsg(t,who){const c=document.getElementById('chat');const d=document.createElement('div');
   d.className='msg '+who;d.innerHTML=t;c.appendChild(d);c.scrollTop=c.scrollHeight;}
@@ -458,31 +458,29 @@ function norm(s){return (s||'').toString().toLowerCase()
   .replace(/[إأآا]/g,'ا').replace(/ى/g,'ي').replace(/ؤ/g,'و').replace(/ئ/g,'ي').replace(/ة/g,'ه')
   .replace(/[^a-z0-9؀-ۿ% ]+/g,' ').replace(/\s+/g,' ').trim();}
 
-/* arabic alias maps */
-const AR_REGION={'مصر':'Levant & Egypt','الشام':'Levant & Egypt','الخليج':'Gulf & Middle East','السعوديه':'Gulf & Middle East','الامارات':'Gulf & Middle East','دبي':'Gulf & Middle East','تركيا':'Türkiye','المانيا':'Germany & DACH','بريطانيا':'UK & Ireland','انجلترا':'UK & Ireland','اسبانيا':'Iberia','فرنسا':'France & Benelux','بولندا':'Poland & CEE'};
-const AR_PROD={'بيبسي':'Pepsi','سفن':'7UP','سفناب':'7UP','ماونتن':'Mountain Dew','مياه':'Aquafina','اكوافينا':'Aquafina','ميرندا':'Mirinda Orange','جاتوريد':'Gatorade','ليبتون':'Lipton Ice Tea','تروبيكانا':'Tropicana','دوريتوس':'Doritos','تشيتوس':'Cheetos','كواكر':'Quaker Oats','روكستار':'Rockstar Energy','ستينج':'Sting Energy'};
-const AR_CAT={'مشروبات':'Beverages','سناكس':'Snacks','شيبسي':'Snacks','وجبات':'Foods','اطعمه':'Foods','طعام':'Foods'};
-const AR_CH={'اونلاين':'E-commerce','الكتروني':'E-commerce','انترنت':'E-commerce','مطاعم':'Foodservice','تقليدي':'Traditional Trade','حديث':'Modern Trade'};
-
-function entities(q){
-  const nq=norm(q);
-  const E={prods:new Set(),regions:new Set(),channels:new Set(),cats:new Set(),brands:new Set(),years:new Set()};
-  YEARS.forEach((y,i)=>{if(nq.includes(String(y)))E.years.add(i);});
-  if(/last year|الماضي|اللي فات|السابقه/.test(nq)&&YEARS.length>1)E.years.add(YEARS.length-2);
-  if(/this year|الحاليه|السنه دي|الحالي/.test(nq))E.years.add(YEARS.length-1);
-  REGIONS.forEach((r,i)=>{norm(r.n).split(' ').forEach(w=>{if(w.length>2&&nq.includes(w))E.regions.add(i);});});
-  Object.entries(AR_REGION).forEach(([k,v])=>{if(nq.includes(norm(k))){const i=REGIONS.findIndex(r=>r.n===v);if(i>=0)E.regions.add(i);}});
-  CHANNELS.forEach((c,i)=>{norm(c.n).split(' ').forEach(w=>{if(w.length>3&&nq.includes(w))E.channels.add(i);});});
-  Object.entries(AR_CH).forEach(([k,v])=>{if(nq.includes(norm(k))){const i=CHANNELS.findIndex(c=>c.n===v);if(i>=0)E.channels.add(i);}});
-  if(/ecom|e ?com|online/.test(nq)&&ECOM_CH>=0)E.channels.add(ECOM_CH);
-  CATS.forEach(c=>{if(nq.includes(norm(c)))E.cats.add(c);});
-  Object.entries(AR_CAT).forEach(([k,v])=>{if(nq.includes(norm(k)))E.cats.add(v);});
-  // products: prefer full-name match, fall back to significant tokens / arabic aliases
-  const exact=[];PRODUCTS.forEach((p,i)=>{if(nq.includes(norm(p.n)))exact.push(i);});
-  if(exact.length){exact.forEach(i=>E.prods.add(i));}
-  else{PRODUCTS.forEach((p,i)=>{norm(p.n).split(' ').forEach(w=>{if(w.length>2&&!['the','ice','tea'].includes(w)&&nq.includes(w))E.prods.add(i);});});}
-  Object.entries(AR_PROD).forEach(([k,v])=>{if(nq.includes(norm(k))){const i=PRODUCTS.findIndex(p=>p.n===v);if(i>=0)E.prods.add(i);}});
-  BRANDS.forEach(b=>{if(nq.includes(norm(b)))E.brands.add(b);});
+/* ===== trained intent classifier wiring (NLPLEX + NLP_MODEL injected at build) =====
+   Intent is predicted by a softmax model trained on a generated bilingual corpus;
+   slots (entities/metrics) come from the shared delexicalising tagger. */
+let TAGGER=null, FIDX=null;
+function nlpInit(){
+  if(typeof NLPLEX==='undefined'||typeof NLP_MODEL==='undefined')return false;
+  TAGGER=NLPLEX.makeTagger({products:PRODUCTS.map(p=>p.n),regions:REGIONS.map(r=>r.n),
+    channels:CHANNELS.map(c=>c.n),cats:CATS,brands:BRANDS,years:YEARS});
+  FIDX=new Map(NLP_MODEL.feats.map((f,i)=>[f,i]));
+  return true;
+}
+function nlpClassify(q){
+  const {feats,slots,toks}=TAGGER.features(q);
+  const L=NLP_MODEL.labels,C=L.length,z=NLP_MODEL.b.slice();
+  for(const ft of feats){const i=FIDX.get(ft);if(i==null)continue;for(let c=0;c<C;c++){const v=NLP_MODEL.W[c][i];if(v)z[c]+=v;}}
+  let mx=-1e9;for(const v of z)if(v>mx)mx=v;let s=0;const p=z.map(v=>{const e=Math.exp(v-mx);s+=e;return e;});
+  let a=0;for(let c=0;c<C;c++){p[c]/=s;if(p[c]>p[a])a=c;}
+  return {intent:L[a],conf:p[a],slots,toks};
+}
+function slotsToE(sl){
+  const E={prods:new Set(sl.products),regions:new Set(sl.regions),channels:new Set(sl.channels),
+    cats:new Set(sl.cats),brands:new Set(sl.brands),years:new Set(sl.years)};
+  (sl.yearrel||[]).forEach(r=>{if(r==='CUR')E.years.add(YEARS.length-1);else if(r==='PREV'&&YEARS.length>1)E.years.add(YEARS.length-2);});
   E.has=E.prods.size||E.regions.size||E.channels.size||E.cats.size||E.brands.size||E.years.size;
   return E;
 }
@@ -542,7 +540,7 @@ const METRICS=[
  {k:'revenue',re:/revenue|sales|ايراد|ايرادات/,lbl:['Revenue','الإيراد'],fmt:'$',get:a=>a.rev},
 ];
 function pickMetric(nq){return METRICS.find(m=>m.re.test(nq))||METRICS[5];}
-/* keyword matchers — \b only works for ASCII, so Arabic is matched by substring */
+/* keyword matchers - \b only works for ASCII, so Arabic is matched by substring */
 function nlist(arr){return arr.map(norm);}
 const DRIVE_AR=nlist(['اعرض','عرض','فلتر','وري','ركز','اظهر','خليني اشوف']);
 const TOP_AR=nlist(['اكثر','اعلى','افضل','اكبر','الاكثر','الاعلى','اعلي']);
@@ -568,124 +566,103 @@ function applyBtn(E){const i=__scopes.length;__scopes.push(E);const en=LANG==='e
   return ` <button class="chip nlp-act" onclick="nlpApply(${i})">📌 ${en?'Filter dashboard to this':'فلتر الداشبورد على ده'}</button>`;}
 
 function help(){const en=LANG==='en';
-  return en?`I'm your data assistant — ask me in English or Arabic. I understand <b>products, brands, regions, channels, categories and years</b>, and I can:
-  <br>• <b>Look up any number</b> — "net profit of Snacks in 2026"
-  <br>• <b>Rank</b> — "top 5 products by revenue", "lowest fill rate region"
-  <br>• <b>Compare</b> — "Pepsi vs 7UP", "Egypt vs Türkiye"
-  <br>• <b>Trends</b> — "revenue trend this year"
-  <br>• <b>Drive the dashboard</b> — "show me E-commerce in Egypt" filters everything.`
-  :`أنا مساعد البيانات — اسألني بالعربي أو الإنجليزي. بفهم <b>المنتجات والعلامات والمناطق والقنوات والفئات والسنين</b>، وأقدر:
-  <br>• <b>أطلّع أي رقم</b> — «صافي ربح السناكس في 2026»
-  <br>• <b>أرتّب</b> — «أعلى 5 منتجات بالإيراد»، «أقل منطقة في التلبية»
-  <br>• <b>أقارن</b> — «بيبسي مع سفن أب»، «مصر مقابل تركيا»
-  <br>• <b>الاتجاهات</b> — «اتجاه الإيراد السنة دي»
-  <br>• <b>أحرّك الداشبورد</b> — «اعرض الأونلاين في مصر» يفلتر كل حاجة.`;}
+  return en?`I'm your data assistant - ask me in English or Arabic. I understand <b>products, brands, regions, channels, categories and years</b>, and I can:
+  <br>• <b>Look up any number</b> - "net profit of Snacks in 2026"
+  <br>• <b>Rank</b> - "top 5 products by revenue", "lowest fill rate region"
+  <br>• <b>Compare</b> - "Pepsi vs 7UP", "Egypt vs Türkiye"
+  <br>• <b>Trends</b> - "revenue trend this year"
+  <br>• <b>Drive the dashboard</b> - "show me E-commerce in Egypt" filters everything.`
+  :`أنا مساعد البيانات - اسألني بالعربي أو الإنجليزي. بفهم <b>المنتجات والعلامات والمناطق والقنوات والفئات والسنين</b>، وأقدر:
+  <br>• <b>أطلّع أي رقم</b> - «صافي ربح السناكس في 2026»
+  <br>• <b>أرتّب</b> - «أعلى 5 منتجات بالإيراد»، «أقل منطقة في التلبية»
+  <br>• <b>أقارن</b> - «بيبسي مع سفن أب»، «مصر مقابل تركيا»
+  <br>• <b>الاتجاهات</b> - «اتجاه الإيراد السنة دي»
+  <br>• <b>أحرّك الداشبورد</b> - «اعرض الأونلاين في مصر» يفلتر كل حاجة.`;}
 
-function nlpAnswer(q){
-  const en=LANG==='en',nq=norm(q),E=entities(q);
-  if(!nq)return help();
-  if(/^(hi|hello|hey|help|اهلا|مرحبا|مساعده|ساعدني|عامل ايه|ايه اللي تقدر|what can you)/.test(nq))return help();
-
-  /* intent: drive the dashboard (filter) */
-  if((/\b(show|filter|drill|focus|view)\b/.test(nq)||anyAr(nq,DRIVE_AR))&&E.has){
-    const i=__scopes.length;__scopes.push(E);
-    setTimeout(()=>nlpApply(i),350);
-    return (en?'📌 Filtering the whole dashboard to <b>'+scopeLabel(E)+'</b> — opening Overview…'
-              :'📌 ببفلتر الداشبورد كله على <b>'+scopeLabel(E)+'</b> — بفتح النظرة العامة…');
-  }
-
-  /* intent: comparison */
-  if(/(vs|versus|compare|قارن|مقابل|الفرق بين)/.test(nq)){
-    const m=pickMetric(nq);let pair=[],type='';
-    if(E.prods.size>=2){type='product';pair=[...E.prods].slice(0,2).map(i=>({lbl:PRODUCTS[i].n,o:aggWhere({prods:new Set([i])})}));}
-    else if(E.regions.size>=2){type='region';pair=[...E.regions].slice(0,2).map(i=>({lbl:REGIONS[i].n,o:aggWhere({regions:new Set([i])})}));}
-    else if(E.channels.size>=2){type='channel';pair=[...E.channels].slice(0,2).map(i=>({lbl:CHANNELS[i].n,o:aggWhere({channels:new Set([i])})}));}
-    else if(E.cats.size>=2){type='category';pair=[...E.cats].slice(0,2).map(c=>({lbl:c,o:aggWhere({cats:new Set([c])})}));}
-    if(pair.length===2){
-      const a=m.get(pair[0].o),b=m.get(pair[1].o),diff=b?((a/b-1)*100):0,win=a>=b?pair[0]:pair[1];
-      return (en?`On <b>${m.lbl[0]}</b>: <b>${pair[0].lbl}</b> = ${fmtV(m,a)} vs <b>${pair[1].lbl}</b> = ${fmtV(m,b)}. `
-                +`${win.lbl} leads by <b>${Math.abs(a-b)?fmtV(m,Math.abs(a-b)):'0'}</b> (${Math.abs(diff).toFixed(0)}%).`
-              :`في <b>${m.lbl[1]}</b>: <b>${pair[0].lbl}</b> = ${fmtV(m,a)} مقابل <b>${pair[1].lbl}</b> = ${fmtV(m,b)}. `
-                +`${win.lbl} الأعلى بفارق <b>${Math.abs(diff).toFixed(0)}%</b>.`);
-    }
-    return en?'Tell me two things to compare, e.g. "Pepsi vs 7UP" or "Egypt vs Türkiye".'
-            :'قولّي حاجتين أقارنهم، مثلاً «بيبسي مع سفن أب» أو «مصر مقابل تركيا».';
-  }
-
-  /* intent: ranking */
-  const isTop=/\b(top|best|highest|most|largest|leading)\b/.test(nq)||anyAr(nq,TOP_AR);
-  const isBot=/\b(bottom|worst|lowest|least|smallest|weakest)\b/.test(nq)||anyAr(nq,BOT_AR);
-  if(isTop||isBot){
-    const dim=(E.regions.size||anyAr(nq,DIM_REGION))?'region':anyAr(nq,DIM_CHANNEL)?'channel':anyAr(nq,DIM_CATEGORY)?'category':anyAr(nq,DIM_BRAND)?'brand':'product';
-    /* operational ranking: fill rate by region */
-    if(/fill|تلبيه|توافر|service/.test(nq)){
-      const arr=[...regions].sort((a,b)=>a.v-b.v);const pick=isBot?arr:arr.slice().reverse();
-      const r=pick[0];return en?`<b>${r.n}</b> has the ${isBot?'lowest':'highest'} fill rate at <b>${r.v}%</b>.`
-                                :`<b>${r.n}</b> ${isBot?'الأدنى':'الأعلى'} في التلبية بـ<b>${r.v}%</b>.`;
-    }
-    const m=pickMetric(nq),map=groupAgg(dim);
-    let arr=[...map.entries()].map(([k,o])=>({k,v:m.get(o)})).sort((a,b)=>b.v-a.v);
-    if(isBot)arr.reverse();
-    const N=Math.min(parseInt((nq.match(/\b(\d+)\b/)||[])[1])||5,arr.length);
-    arr=arr.slice(0,N);
-    const dn={product:['products','منتجات'],region:['regions','مناطق'],channel:['channels','قنوات'],category:['categories','فئات'],brand:['brands','علامات']}[dim];
-    const list=arr.map((x,i)=>`${i+1}. <b>${x.k}</b> — ${fmtV(m,x.v)}`).join('<br>');
-    return (en?`${isBot?'Bottom':'Top'} ${N} ${dn[0]} by ${m.lbl[0]}:<br>${list}`
-              :`${isBot?'أقل':'أعلى'} ${N} ${dn[1]} حسب ${m.lbl[1]}:<br>${list}`);
-  }
-
-  /* intent: trend */
-  if(/trend|over time|monthly|اتجاه|شهري|نمو|بمرور الوقت/.test(nq)){
-    const h1=revTrend.slice(0,6).reduce((a,b)=>a+b,0),h2=revTrend.slice(6).reduce((a,b)=>a+b,0);
-    return (en?`Revenue ${h2>=h1?'rose':'eased'} through the year (H2 ${h2>=h1?'+':''}$${(h2-h1).toFixed(0)}M vs H1), YoY <b>${totals.yoyRev>=0?'+':''}${totals.yoyRev}%</b>. Peak month: <b>${M[revTrend.indexOf(Math.max(...revTrend))]}</b>.`
-              :`الإيراد ${h2>=h1?'ارتفع':'هدأ'} خلال السنة (النصف الثاني ${(h2-h1).toFixed(0)} مليون $ مقابل الأول)، YoY <b>${totals.yoyRev>=0?'+':''}${totals.yoyRev}%</b>. أعلى شهر: <b>${M[revTrend.indexOf(Math.max(...revTrend))]}</b>.`);
-  }
-
-  /* intent: share / mix */
-  if(/share|mix|حصه|توزيع|نسبه/.test(nq)){
-    if(/categor|فئ|mix|توزيع/.test(nq)){
-      const cats={};products.forEach(p=>cats[p.c]=(cats[p.c]||0)+p.rev);
-      const tot=Object.values(cats).reduce((a,b)=>a+b,0)||1;
-      const list=Object.entries(cats).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<b>${k}</b> ${(v/tot*100).toFixed(0)}%`).join(' · ');
-      return (en?'Category mix of revenue: '+list:'توزيع الإيراد على الفئات: '+list);
-    }
-    const top=[...products].sort((a,b)=>b.share-a.share)[0];
-    return en?`<b>${top.n}</b> holds the largest revenue share at <b>${top.share}%</b>.`:`<b>${top.n}</b> الأعلى حصة بـ<b>${top.share}%</b>.`;
-  }
-
-  /* intent: scoped metric value (revenue/profit/units/margin/cogs) */
-  if(METRICS.some(m=>m.re.test(nq))){
-    const m=pickMetric(nq),a=aggWhere(scopeFromE(E)),v=m.get(a);
-    const lbl=scopeLabel(E);
-    let extra='';
-    if(m.k==='revenue'||m.k==='net'){extra=en?` · margin ${(a.rev?a.np/a.rev*100:0).toFixed(1)}%`:` · هامش ${(a.rev?a.np/a.rev*100:0).toFixed(1)}%`;}
-    return (en?`<b>${m.lbl[0]}</b> for <b>${lbl}</b>: <b>${fmtV(m,v)}</b>${extra}.`
-              :`<b>${m.lbl[1]}</b> لـ<b>${lbl}</b>: <b>${fmtV(m,v)}</b>${extra}.`)
-           + (E.has?applyBtn(E):'');
-  }
-
-  /* operational metrics (from current filtered view) */
-  if(/delivery|otd|otif|تسليم|موعد/.test(nq))
+const FIN={gross:1,margin:1,net:1,cogs:1,units:1,revenue:1};
+function metricObj(k){return METRICS.find(m=>m.k===k);}
+function opAnswer(key,en){
+  if(key==='otd'||key==='otif')
     return en?`On-time delivery is <b>${otdTrend[11]}%</b> and OTIF <b>${otifTrend[11]}%</b> in the current view.`:`التسليم في الموعد <b>${otdTrend[11]}%</b> والكامل <b>${otifTrend[11]}%</b>.`;
-  if(/fill|تلبيه|توافر/.test(nq)){const f=regions.reduce((s,r)=>s+r.v,0)/Math.max(regions.length,1);
-    const low=[...regions].sort((a,b)=>a.v-b.v)[0];
+  if(key==='fill'){const f=regions.reduce((s,r)=>s+r.v,0)/Math.max(regions.length,1),low=[...regions].sort((a,b)=>a.v-b.v)[0];
     return en?`Average fill rate is <b>${f.toFixed(1)}%</b>; weakest region: <b>${low?low.n:'-'}</b> (${low?low.v:0}%).`:`متوسط التلبية <b>${f.toFixed(1)}%</b>؛ أضعف منطقة: <b>${low?low.n:'-'}</b>.`;}
-  if(/out.?of.?stock|oos|stockout|نفاد|نافد|مخزون/.test(nq)){const c=stockouts[0]||{p:'-',d:0};
+  if(key==='oos'){const c=stockouts[0]||{p:'-',d:0};
     return en?`<b>${stockouts.length}</b> SKUs at low/critical stock; most urgent: <b>${c.p}</b> (${c.d} days cover).`:`<b>${stockouts.length}</b> صنف بمخزون منخفض/حرج؛ الأكثر إلحاحاً: <b>${c.p}</b>.`;}
-  if(/ecom|gmv|aov|cart|conversion|سله|اونلاين|الكتروني|تحويل/.test(nq))
+  if(key==='ecom'||key==='aov'||key==='abandon'||key==='conversion')
     return en?`E-commerce GMV <b>$${(ecom.gmv/1e9).toFixed(2)}B</b>, AOV <b>$${ecom.aov}</b>, conversion <b>${ecom.conv}%</b>, cart abandon <b>${ecom.abandon}%</b>.`:`التجارة الإلكترونية GMV <b>$${(ecom.gmv/1e9).toFixed(2)}B</b>، متوسط الطلب <b>$${ecom.aov}</b>، ترك السلة <b>${ecom.abandon}%</b>.`;
-  if(/turnover|attrition|دوران|استقال/.test(nq))
+  if(key==='turnover')
     return en?`Monthly turnover is <b>${turnTrend[11]}%</b>; open gap <b>${DBhr.hrKpis.openReqs}</b> roles, ${DBhr.hrKpis.pctFilled}% of plan filled.`:`الدوران الشهري <b>${turnTrend[11]}%</b>؛ الفجوة <b>${DBhr.hrKpis.openReqs}</b> وظيفة.`;
-  if(/headcount|عدد|موظف|عماله/.test(nq))
-    return en?`Total headcount is <b>${depts.reduce((s,d)=>s+d.v,0).toLocaleString()}</b> across ${depts.length} functions.`:`إجمالي العدد <b>${depts.reduce((s,d)=>s+d.v,0).toLocaleString()}</b> موظف عبر ${depts.length} وظائف.`;
-  if(/why|risk|problem|ليه|سبب|مشكله|خطر/.test(nq)){const risk=[...products].sort((a,b)=>b.oos-a.oos)[0]||{n:'-',oos:0},low=[...regions].sort((a,b)=>a.v-b.v)[0];
-    return en?`Biggest watch-outs: <b>${risk.n}</b> has the highest OOS at <b>${risk.oos}%</b>, and <b>${low?low.n:'-'}</b> trails on fill rate (${low?low.v:0}%). Prioritise replenishment there.`:`أهم المخاطر: <b>${risk.n}</b> الأعلى نفاداً بـ<b>${risk.oos}%</b>، و<b>${low?low.n:'-'}</b> الأضعف في التلبية. ركّز التموين هناك.`;}
+  if(key==='headcount')
+    return en?`Total headcount is <b>${depts.reduce((s,d)=>s+d.v,0).toLocaleString()}</b> across ${depts.length} functions.`:`إجمالي العدد <b>${depts.reduce((s,d)=>s+d.v,0).toLocaleString()}</b> موظف.`;
+  return null;
+}
+function doCompare(E,mkey,en){
+  const m=(mkey&&FIN[mkey])?metricObj(mkey):metricObj('revenue');
+  let pair=null;
+  if(E.prods.size>=2)pair=[...E.prods].slice(0,2).map(i=>({lbl:PRODUCTS[i].n,o:aggWhere({prods:new Set([i])})}));
+  else if(E.regions.size>=2)pair=[...E.regions].slice(0,2).map(i=>({lbl:REGIONS[i].n,o:aggWhere({regions:new Set([i])})}));
+  else if(E.channels.size>=2)pair=[...E.channels].slice(0,2).map(i=>({lbl:CHANNELS[i].n,o:aggWhere({channels:new Set([i])})}));
+  else if(E.cats.size>=2)pair=[...E.cats].slice(0,2).map(c=>({lbl:c,o:aggWhere({cats:new Set([c])})}));
+  if(!pair)return en?'Tell me two things to compare, e.g. "Pepsi vs 7UP" or "Egypt vs Türkiye".':'قولّي حاجتين أقارنهم، مثلاً «بيبسي مع سفن أب».';
+  const a=m.get(pair[0].o),b=m.get(pair[1].o),diff=b?((a/b-1)*100):0,win=a>=b?pair[0]:pair[1];
+  return en?`On <b>${m.lbl[0]}</b>: <b>${pair[0].lbl}</b> = ${fmtV(m,a)} vs <b>${pair[1].lbl}</b> = ${fmtV(m,b)}. ${win.lbl} leads by <b>${Math.abs(diff).toFixed(0)}%</b>.`
+           :`في <b>${m.lbl[1]}</b>: <b>${pair[0].lbl}</b> = ${fmtV(m,a)} مقابل <b>${pair[1].lbl}</b> = ${fmtV(m,b)}. ${win.lbl} الأعلى بفارق <b>${Math.abs(diff).toFixed(0)}%</b>.`;
+}
+function doRank(nq,E,mkey,en){
+  const dim=(E.regions.size||anyAr(nq,DIM_REGION))?'region':anyAr(nq,DIM_CHANNEL)?'channel':anyAr(nq,DIM_CATEGORY)?'category':anyAr(nq,DIM_BRAND)?'brand':'product';
+  const isBot=/\b(bottom|worst|lowest|least|smallest|weakest)\b/.test(nq)||anyAr(nq,BOT_AR);
+  if(mkey==='fill'||/fill|تلبيه|توافر|service/.test(nq)){
+    const arr=[...regions].sort((a,b)=>a.v-b.v),r=(isBot?arr:arr.slice().reverse())[0];
+    if(r)return en?`<b>${r.n}</b> has the ${isBot?'lowest':'highest'} fill rate at <b>${r.v}%</b>.`:`<b>${r.n}</b> ${isBot?'الأدنى':'الأعلى'} في التلبية بـ<b>${r.v}%</b>.`;
+  }
+  const m=(mkey&&FIN[mkey])?metricObj(mkey):metricObj('revenue');
+  let arr=[...groupAgg(dim).entries()].map(([k,o])=>({k,v:m.get(o)})).sort((a,b)=>b.v-a.v);
+  if(isBot)arr.reverse();
+  const N=Math.min(parseInt((nq.match(/\b(\d+)\b/)||[])[1])||5,arr.length);
+  arr=arr.slice(0,N);
+  const dn={product:['products','منتجات'],region:['regions','مناطق'],channel:['channels','قنوات'],category:['categories','فئات'],brand:['brands','علامات']}[dim];
+  const list=arr.map((x,i)=>`${i+1}. <b>${x.k}</b> - ${fmtV(m,x.v)}`).join('<br>');
+  return en?`${isBot?'Bottom':'Top'} ${N} ${dn[0]} by ${m.lbl[0]}:<br>${list}`:`${isBot?'أقل':'أعلى'} ${N} ${dn[1]} حسب ${m.lbl[1]}:<br>${list}`;
+}
+function doTrend(en){const h1=revTrend.slice(0,6).reduce((a,b)=>a+b,0),h2=revTrend.slice(6).reduce((a,b)=>a+b,0);
+  return en?`Revenue ${h2>=h1?'rose':'eased'} through the year (H2 ${h2>=h1?'+':''}$${(h2-h1).toFixed(0)}M vs H1), YoY <b>${totals.yoyRev>=0?'+':''}${totals.yoyRev}%</b>. Peak month: <b>${M[revTrend.indexOf(Math.max(...revTrend))]}</b>.`
+           :`الإيراد ${h2>=h1?'ارتفع':'هدأ'} خلال السنة (النصف الثاني ${(h2-h1).toFixed(0)} مليون $ مقابل الأول)، YoY <b>${totals.yoyRev>=0?'+':''}${totals.yoyRev}%</b>. أعلى شهر: <b>${M[revTrend.indexOf(Math.max(...revTrend))]}</b>.`;}
+function doShare(E,en){
+  if(E&&E.prods.size){const idx=[...E.prods][0],p=products.find(x=>x.n===PRODUCTS[idx].n);
+    if(p)return en?`<b>${p.n}</b> holds <b>${p.share}%</b> of revenue in view.`:`<b>${p.n}</b> حصته <b>${p.share}%</b> من الإيراد.`;}
+  const cats={};products.forEach(p=>cats[p.c]=(cats[p.c]||0)+p.rev);
+  const tot=Object.values(cats).reduce((a,b)=>a+b,0)||1;
+  const list=Object.entries(cats).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<b>${k}</b> ${(v/tot*100).toFixed(0)}%`).join(' · ');
+  return en?'Category mix of revenue: '+list:'توزيع الإيراد على الفئات: '+list;
+}
+function nlpAnswer(q){
+  const en=LANG==='en',nq=norm(q);
+  if(!nq)return help();
+  if(!TAGGER&&!nlpInit())return help();
+  const P=nlpClassify(q),E=slotsToE(P.slots),mkey=(P.slots.metric||[])[0]||null;
 
-  /* fallback: if entities present, give a revenue snapshot of that scope */
+  if(P.intent==='filter'&&E.has){
+    const i=__scopes.length;__scopes.push(E);setTimeout(()=>nlpApply(i),350);
+    return en?'📌 Filtering the whole dashboard to <b>'+scopeLabel(E)+'</b> - opening Overview…'
+             :'📌 ببفلتر الداشبورد كله على <b>'+scopeLabel(E)+'</b> - بفتح النظرة العامة…';
+  }
+  if(P.intent==='compare')return doCompare(E,mkey,en);
+  if(P.intent==='rank')return doRank(nq,E,mkey,en);
+  if(P.intent==='trend')return doTrend(en);
+  if(P.intent==='share')return doShare(E,en);
+  if(P.intent==='value'){
+    if(mkey&&FIN[mkey]){const m=metricObj(mkey),a=aggWhere(scopeFromE(E)),v=m.get(a);
+      const extra=(mkey==='revenue'||mkey==='net')?(en?` · margin ${(a.rev?a.np/a.rev*100:0).toFixed(1)}%`:` · هامش ${(a.rev?a.np/a.rev*100:0).toFixed(1)}%`):'';
+      return (en?`<b>${m.lbl[0]}</b> for <b>${scopeLabel(E)}</b>: <b>${fmtV(m,v)}</b>${extra}.`
+                :`<b>${m.lbl[1]}</b> لـ<b>${scopeLabel(E)}</b>: <b>${fmtV(m,v)}</b>${extra}.`)+(E.has?applyBtn(E):'');}
+    if(mkey){const r=opAnswer(mkey,en);if(r)return r;}
+  }
+  if(P.intent==='smalltalk')return help();
+  /* graceful fallbacks */
+  if(mkey){const r=opAnswer(mkey,en);if(r)return r;}
   if(E.has){const a=aggWhere(scopeFromE(E));
     return (en?`For <b>${scopeLabel(E)}</b>: revenue <b>$${(a.rev/1e9).toFixed(2)}B</b>, net profit <b>$${(a.np/1e9).toFixed(2)}B</b>, ${(a.units/1e9).toFixed(2)}B units.`
-              :`لـ<b>${scopeLabel(E)}</b>: الإيراد <b>$${(a.rev/1e9).toFixed(2)}B</b>، صافي الربح <b>$${(a.np/1e9).toFixed(2)}B</b>، ${(a.units/1e9).toFixed(2)} مليار وحدة.`)
-           +applyBtn(E);
+              :`لـ<b>${scopeLabel(E)}</b>: الإيراد <b>$${(a.rev/1e9).toFixed(2)}B</b>، صافي الربح <b>$${(a.np/1e9).toFixed(2)}B</b>، ${(a.units/1e9).toFixed(2)} مليار وحدة.`)+applyBtn(E);
   }
   return help();
 }
@@ -722,9 +699,9 @@ function renderOverview(t){
    const byNp=[...products].sort((a,b)=>b.np-a.np),t3=byNp.slice(0,3).reduce((s,p)=>s+p.np,0),tot=byNp.reduce((s,p)=>s+p.np,0)||1;
    const risk=[...products].sort((a,b)=>b.oos-a.oos)[0]||{n:'-',oos:0},en=LANG==='en',el=document.getElementById('keyins');
    if(el)el.innerHTML=
-     ki('var(--green)',en?'Fastest grower':'الأسرع نمواً',(byY.yoy>=0?'+':'')+byY.yoy+'%',byY.n+(en?' — scale capacity':' — وسّع الطاقة'))+
+     ki('var(--green)',en?'Fastest grower':'الأسرع نمواً',(byY.yoy>=0?'+':'')+byY.yoy+'%',byY.n+(en?' - scale capacity':' - وسّع الطاقة'))+
      ki('var(--cyan)',en?'Profit concentration':'تركّز الربح',(t3/tot*100).toFixed(0)+'%',en?'Top 3 products':'أعلى 3 منتجات')+
-     ki('var(--red)',en?'Top supply risk':'أعلى خطر إمداد',risk.oos+'%',risk.n+(en?' OOS — expedite':' نافد — عجّل'));
+     ki('var(--red)',en?'Top supply risk':'أعلى خطر إمداد',risk.oos+'%',risk.n+(en?' OOS - expedite':' نافد - عجّل'));
   })();
   mk('ovTrend',{type:'line',data:{labels:M,datasets:[
     {label:LANG==='en'?'Revenue':'الإيراد',data:revTrend,borderColor:t.cyan,backgroundColor:ctxG('ovTrend',t.cyan),fill:true,tension:.4,borderWidth:3,pointRadius:0,pointHoverRadius:5},
@@ -786,17 +763,17 @@ function renderRevenue(t){
   const byP=[...products].sort((a,b)=>b.np-a.np);
   const top3=byP.slice(0,3).reduce((s,p)=>s+p.np,0),tot=byP.reduce((s,p)=>s+p.np,0)||1;
   mk('finProfit',{type:'bar',data:{labels:byP.map(p=>p.n),datasets:[{data:byP.map(p=>p.np),backgroundColor:byP.map((p,i)=>i<3?t.cyan:t.gray),borderRadius:6}]},options:optBar(t,true)});
-  if(byP.length)insight('finProfit','Top 3 products generate '+(top3/tot*100).toFixed(0)+'% of net profit — '+byP[0].n+' leads at $'+byP[0].np+'M.',
+  if(byP.length)insight('finProfit','Top 3 products generate '+(top3/tot*100).toFixed(0)+'% of net profit - '+byP[0].n+' leads at $'+byP[0].np+'M.',
     'Protect availability of these profit drivers.','أعلى 3 منتجات تحقق '+(top3/tot*100).toFixed(0)+'٪ من صافي الربح.','احمِ توافر هذه المنتجات.');
   mk('finMargin',{type:'line',data:{labels:M,datasets:[
     {label:LANG==='en'?'Gross %':'إجمالي %',data:grossMargin,borderColor:t.cyan,backgroundColor:'transparent',tension:.4,borderWidth:3,pointRadius:0},
     {label:LANG==='en'?'Net %':'صافي %',data:netMargin,borderColor:t.gold,backgroundColor:'transparent',tension:.4,borderWidth:3,pointRadius:0}
   ]},options:Object.assign(optLine(t),{scales:{x:{grid:{display:false},border:{display:false},ticks:{color:t.muted}},y:{min:0,max:70,grid:{color:t.line},border:{display:false},ticks:{color:t.muted,callback:v=>v+'%'}}}})});
-  insight('finMargin','Gross '+(grossMargin[11]||0)+'% vs net '+(netMargin[11]||0).toFixed(0)+'% — overhead is the gap.',
+  insight('finMargin','Gross '+(grossMargin[11]||0)+'% vs net '+(netMargin[11]||0).toFixed(0)+'% - overhead is the gap.',
     'Target opex efficiency to convert gross into net.','الإجمالي '+(grossMargin[11]||0)+'٪ والصافي '+(netMargin[11]||0).toFixed(0)+'٪.','استهدف كفاءة المصروفات.');
   const fl=[['Visits','زيارات',ecom.visits],['Views','مشاهدات',ecom.views],['Add to cart','إضافة للسلة',ecom.cart],['Checkout','إتمام',ecom.checkout],['Purchase','شراء',ecom.purchase]];
   mk('finFunnel',{type:'bar',data:{labels:fl.map(x=>LANG==='en'?x[0]:x[1]),datasets:[{data:fl.map(x=>x[2]),backgroundColor:fl.map((x,i)=>i===4?t.green:(i===2?t.red:t.gray)),borderRadius:6}]},options:optBar(t,true)});
-  insight('finFunnel',ecom.abandon+'% of carts never convert — the biggest e-commerce lever.',
+  insight('finFunnel',ecom.abandon+'% of carts never convert - the biggest e-commerce lever.',
     'A 10-pt checkout recovery ≈ $'+(ecom.gmv*0.10/1e6).toFixed(0)+'M GMV.',ecom.abandon+'٪ من السلات لا تكتمل.','تحسين الإتمام 10 نقاط ≈ '+(ecom.gmv*0.10/1e6).toFixed(0)+' مليون $.');
 }
 
@@ -804,12 +781,12 @@ function renderProducts(t){
   const sh=[...products].sort((a,b)=>b.share-a.share).slice(0,10);
   const top5=[...products].sort((a,b)=>b.share-a.share).slice(0,5).reduce((s,p)=>s+p.share,0);
   mk('prodShare',{type:'bar',data:{labels:sh.map(p=>p.n),datasets:[{data:sh.map(p=>p.share),backgroundColor:sh.map((p,i)=>i<5?t.cyan:t.gray),borderRadius:6}]},options:optBar(t,true)});
-  if(sh.length)insight('prodShare','Top 5 products command '+top5.toFixed(0)+'% of revenue — a Pareto led by '+sh[0].n+'.',
+  if(sh.length)insight('prodShare','Top 5 products command '+top5.toFixed(0)+'% of revenue - a Pareto led by '+sh[0].n+'.',
     'Focus forecasting and availability on these SKUs first.','أعلى 5 منتجات تستحوذ على '+top5.toFixed(0)+'٪ من الإيراد.','ركّز التنبؤ والتوافر على هذه الأصناف.');
   const byU=[...products].sort((a,b)=>b.units-a.units).slice(0,10);
   mk('prodTop',{type:'bar',data:{labels:byU.map(p=>p.n),datasets:[{data:byU.map(p=>Math.round(p.units/1e6)),backgroundColor:byU.map((p,i)=>i===0?t.red:t.gray),borderRadius:6}]},options:optBar(t,true)});
   if(byU.length)insight('prodTop',byU[0].n+' is the volume leader at '+(byU[0].units/1e9).toFixed(2)+'B units.',
-    'Treat it as a service-level-1 SKU — zero stockout tolerance.',byU[0].n+' متصدر الحجم بـ'+(byU[0].units/1e9).toFixed(2)+' مليار وحدة.','تعامل معه كأولوية قصوى.');
+    'Treat it as a service-level-1 SKU - zero stockout tolerance.',byU[0].n+' متصدر الحجم بـ'+(byU[0].units/1e9).toFixed(2)+' مليار وحدة.','تعامل معه كأولوية قصوى.');
   buildProducts();
 }
 
@@ -821,7 +798,7 @@ function renderWorkforce(t){
     'Start workforce planning with these two functions.','وظائف الإمداد '+(supply/tot*100).toFixed(0)+'٪ من العدد.','ابدأ التخطيط من هاتين الوظيفتين.');
   mk('wkAttr',{type:'doughnut',data:{labels:[LANG==='en'?'Voluntary':'طوعي',LANG==='en'?'Involuntary':'غير طوعي'],datasets:[{data:[64,36],backgroundColor:[t.red,t.gray],borderWidth:0}]},
     options:{responsive:true,maintainAspectRatio:false,cutout:'64%',plugins:{legend:legend(t),tooltip:tt(t),datalabels:{display:true,color:'#fff',font:{weight:'800',size:13},formatter:(v,c)=>{const a=c.chart.data.datasets[0].data,s=a.reduce((x,y)=>x+y,0);return Math.round(v/s*100)+'%';}}}}});
-  insight('wkAttr','64% of exits are voluntary — the lever is retention.',
+  insight('wkAttr','64% of exits are voluntary - the lever is retention.',
     'Run stay-interviews in the highest-turnover roles.','64٪ من المغادرة طوعية.','أجرِ مقابلات احتفاظ.');
   mk('wkTurn',{type:'line',data:{labels:M,datasets:[
     {label:LANG==='en'?'Turnover %':'الدوران %',data:turnTrend,borderColor:t.cyan,backgroundColor:ctxG('wkTurn',t.cyan),fill:true,tension:.4,borderWidth:3,pointRadius:0},
@@ -893,13 +870,13 @@ function renderWorkforceHR(t){
     {label:en?'In notice':'في الإشعار',data:na.map(x=>x.notice),backgroundColor:t.red,borderRadius:5,stack:'s'}
   ]},options:Object.assign(optBar(t,false),{plugins:{legend:legend(t),tooltip:tt(t),datalabels:{display:false}},scales:{x:{stacked:true,grid:{display:false},border:{display:false},ticks:{color:t.muted,font:{size:9}}},y:{stacked:true,grid:{color:t.line},border:{display:false},ticks:{color:t.muted}}}})});
   if(na.length){const ar=na.slice().sort((a,b)=>(b.notice-b.pipeline)-(a.notice-a.pipeline))[0];
-    insight('wkNotice',ar.area+' is most exposed — '+ar.notice+' in notice vs '+ar.pipeline+' in pipeline.','Accelerate sourcing where notices outpace pipeline.',
+    insight('wkNotice',ar.area+' is most exposed - '+ar.notice+' in notice vs '+ar.pipeline+' in pipeline.','Accelerate sourcing where notices outpace pipeline.',
       ar.area+' الأكثر تعرضاً.','سرّع التوظيف حيث تتجاوز الإشعارات المسار.');}
   renderGapHeatmap(t);
 }
 
 /* ============================================================================
-   LOGIN BACKGROUND ANIMATION (floating products) — guarded for headless test
+   LOGIN BACKGROUND ANIMATION (floating products) - guarded for headless test
    ========================================================================== */
 if(typeof document!=='undefined' && document.getElementById('loginBg')){(function(){
   const bg=document.getElementById('loginBg');
