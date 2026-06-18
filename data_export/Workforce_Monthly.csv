@@ -1,0 +1,289 @@
+Year,Month,Department,Headcount,PlanHeadcount,Hires,Resignations_Voluntary,Resignations_Involuntary
+2024,1,Manufacturing (MAKE),1248,1240,42,27,7
+2024,2,Manufacturing (MAKE),1247,1245,33,23,11
+2024,3,Manufacturing (MAKE),1247,1250,28,23,5
+2024,4,Manufacturing (MAKE),1256,1255,34,17,8
+2024,5,Manufacturing (MAKE),1257,1260,29,22,6
+2024,6,Manufacturing (MAKE),1258,1265,40,28,11
+2024,7,Manufacturing (MAKE),1265,1270,35,23,5
+2024,8,Manufacturing (MAKE),1272,1275,30,16,7
+2024,9,Manufacturing (MAKE),1278,1280,30,17,7
+2024,10,Manufacturing (MAKE),1283,1285,33,23,5
+2024,11,Manufacturing (MAKE),1291,1290,39,25,6
+2024,12,Manufacturing (MAKE),1298,1295,30,18,5
+2025,1,Manufacturing (MAKE),1299,1277,36,25,10
+2025,2,Manufacturing (MAKE),1301,1282,45,29,14
+2025,3,Manufacturing (MAKE),1297,1287,27,22,9
+2025,4,Manufacturing (MAKE),1296,1292,26,20,7
+2025,5,Manufacturing (MAKE),1303,1297,33,19,7
+2025,6,Manufacturing (MAKE),1301,1302,33,27,8
+2025,7,Manufacturing (MAKE),1303,1307,32,25,5
+2025,8,Manufacturing (MAKE),1308,1312,33,19,9
+2025,9,Manufacturing (MAKE),1311,1317,46,31,12
+2025,10,Manufacturing (MAKE),1318,1322,40,27,6
+2025,11,Manufacturing (MAKE),1321,1327,30,21,6
+2025,12,Manufacturing (MAKE),1321,1332,38,27,11
+2026,1,Manufacturing (MAKE),1324,1314,42,27,12
+2026,2,Manufacturing (MAKE),1326,1319,29,19,8
+2026,3,Manufacturing (MAKE),1330,1324,37,25,8
+2026,4,Manufacturing (MAKE),1328,1329,20,17,5
+2026,5,Manufacturing (MAKE),1332,1334,43,29,10
+2026,6,Manufacturing (MAKE),1332,1339,21,17,4
+2026,7,Manufacturing (MAKE),1337,1344,39,24,10
+2026,8,Manufacturing (MAKE),1338,1349,34,24,9
+2026,9,Manufacturing (MAKE),1348,1354,50,30,10
+2026,10,Manufacturing (MAKE),1353,1359,38,23,10
+2026,11,Manufacturing (MAKE),1357,1364,32,22,6
+2026,12,Manufacturing (MAKE),1363,1369,36,24,6
+2024,1,Logistics (MOVE),867,860,37,20,10
+2024,2,Logistics (MOVE),865,863,36,30,8
+2024,3,Logistics (MOVE),871,867,35,24,5
+2024,4,Logistics (MOVE),873,870,32,22,8
+2024,5,Logistics (MOVE),873,874,39,29,10
+2024,6,Logistics (MOVE),878,877,47,32,10
+2024,7,Logistics (MOVE),885,881,36,21,8
+2024,8,Logistics (MOVE),891,884,33,21,6
+2024,9,Logistics (MOVE),891,888,42,29,13
+2024,10,Logistics (MOVE),896,891,39,24,10
+2024,11,Logistics (MOVE),897,894,39,27,11
+2024,12,Logistics (MOVE),904,898,46,30,9
+2025,1,Logistics (MOVE),908,886,38,23,11
+2025,2,Logistics (MOVE),910,889,40,26,12
+2025,3,Logistics (MOVE),913,893,33,21,9
+2025,4,Logistics (MOVE),913,896,30,22,8
+2025,5,Logistics (MOVE),913,900,38,27,11
+2025,6,Logistics (MOVE),914,903,31,23,7
+2025,7,Logistics (MOVE),918,906,37,26,7
+2025,8,Logistics (MOVE),915,910,43,36,10
+2025,9,Logistics (MOVE),917,913,51,33,16
+2025,10,Logistics (MOVE),923,917,44,28,10
+2025,11,Logistics (MOVE),927,920,48,33,11
+2025,12,Logistics (MOVE),928,924,31,23,7
+2026,1,Logistics (MOVE),932,912,34,24,6
+2026,2,Logistics (MOVE),930,915,37,31,8
+2026,3,Logistics (MOVE),927,918,22,20,5
+2026,4,Logistics (MOVE),927,922,32,22,10
+2026,5,Logistics (MOVE),927,925,50,35,15
+2026,6,Logistics (MOVE),929,929,35,24,9
+2026,7,Logistics (MOVE),931,932,50,34,14
+2026,8,Logistics (MOVE),933,936,37,29,6
+2026,9,Logistics (MOVE),940,939,40,27,6
+2026,10,Logistics (MOVE),942,943,47,30,15
+2026,11,Logistics (MOVE),950,946,47,30,9
+2026,12,Logistics (MOVE),954,949,40,26,10
+2024,1,Sales & Distribution,1186,1180,43,26,11
+2024,2,Sales & Distribution,1185,1185,43,33,11
+2024,3,Sales & Distribution,1190,1189,41,24,12
+2024,4,Sales & Distribution,1197,1194,49,30,12
+2024,5,Sales & Distribution,1196,1199,29,23,7
+2024,6,Sales & Distribution,1203,1204,46,32,7
+2024,7,Sales & Distribution,1210,1208,33,21,5
+2024,8,Sales & Distribution,1212,1213,31,20,9
+2024,9,Sales & Distribution,1216,1218,39,26,9
+2024,10,Sales & Distribution,1215,1222,37,29,9
+2024,11,Sales & Distribution,1224,1227,36,19,8
+2024,12,Sales & Distribution,1227,1232,39,24,12
+2025,1,Sales & Distribution,1232,1215,51,33,13
+2025,2,Sales & Distribution,1232,1220,40,31,9
+2025,3,Sales & Distribution,1237,1225,44,27,12
+2025,4,Sales & Distribution,1242,1230,48,32,11
+2025,5,Sales & Distribution,1241,1234,40,29,12
+2025,6,Sales & Distribution,1249,1239,42,26,8
+2025,7,Sales & Distribution,1251,1244,50,33,15
+2025,8,Sales & Distribution,1254,1248,38,26,9
+2025,9,Sales & Distribution,1254,1253,40,31,9
+2025,10,Sales & Distribution,1259,1258,35,20,10
+2025,11,Sales & Distribution,1258,1263,45,35,11
+2025,12,Sales & Distribution,1264,1267,37,21,10
+2026,1,Sales & Distribution,1267,1251,45,32,10
+2026,2,Sales & Distribution,1264,1256,37,28,12
+2026,3,Sales & Distribution,1267,1260,43,32,8
+2026,4,Sales & Distribution,1267,1265,46,32,14
+2026,5,Sales & Distribution,1268,1270,37,27,9
+2026,6,Sales & Distribution,1272,1274,34,24,6
+2026,7,Sales & Distribution,1275,1279,44,29,12
+2026,8,Sales & Distribution,1282,1284,51,36,8
+2026,9,Sales & Distribution,1284,1289,42,31,9
+2026,10,Sales & Distribution,1286,1293,31,22,7
+2026,11,Sales & Distribution,1292,1298,44,29,9
+2026,12,Sales & Distribution,1292,1303,46,36,10
+2024,1,Commercial & Marketing,423,420,12,7,2
+2024,2,Commercial & Marketing,421,422,6,6,2
+2024,3,Commercial & Marketing,427,423,14,6,2
+2024,4,Commercial & Marketing,434,425,17,8,2
+2024,5,Commercial & Marketing,433,427,9,8,2
+2024,6,Commercial & Marketing,433,428,8,6,2
+2024,7,Commercial & Marketing,433,430,7,6,1
+2024,8,Commercial & Marketing,432,432,5,5,1
+2024,9,Commercial & Marketing,432,433,8,6,2
+2024,10,Commercial & Marketing,436,435,11,5,2
+2024,11,Commercial & Marketing,440,437,14,8,2
+2024,12,Commercial & Marketing,442,438,8,5,1
+2025,1,Commercial & Marketing,444,433,12,8,2
+2025,2,Commercial & Marketing,448,434,11,6,1
+2025,3,Commercial & Marketing,447,436,6,5,2
+2025,4,Commercial & Marketing,448,438,13,8,4
+2025,5,Commercial & Marketing,450,439,9,5,2
+2025,6,Commercial & Marketing,452,441,14,8,4
+2025,7,Commercial & Marketing,455,443,12,6,3
+2025,8,Commercial & Marketing,460,444,12,5,2
+2025,9,Commercial & Marketing,463,446,13,7,3
+2025,10,Commercial & Marketing,460,448,6,7,2
+2025,11,Commercial & Marketing,457,449,7,7,3
+2025,12,Commercial & Marketing,460,451,11,6,2
+2026,1,Commercial & Marketing,459,445,9,7,3
+2026,2,Commercial & Marketing,458,447,9,7,3
+2026,3,Commercial & Marketing,463,449,14,7,2
+2026,4,Commercial & Marketing,467,450,10,5,1
+2026,5,Commercial & Marketing,464,452,6,7,2
+2026,6,Commercial & Marketing,467,454,10,5,2
+2026,7,Commercial & Marketing,463,455,4,6,2
+2026,8,Commercial & Marketing,469,457,15,7,2
+2026,9,Commercial & Marketing,470,459,7,5,1
+2026,10,Commercial & Marketing,471,460,10,6,3
+2026,11,Commercial & Marketing,469,462,8,8,2
+2026,12,Commercial & Marketing,470,464,12,8,3
+2024,1,Finance & IT,343,340,7,3,1
+2024,2,Finance & IT,351,341,13,4,1
+2024,3,Finance & IT,355,343,9,4,1
+2024,4,Finance & IT,355,344,7,5,2
+2024,5,Finance & IT,357,345,9,5,2
+2024,6,Finance & IT,358,347,5,3,1
+2024,7,Finance & IT,359,348,5,3,1
+2024,8,Finance & IT,363,350,9,4,1
+2024,9,Finance & IT,359,351,1,4,1
+2024,10,Finance & IT,365,352,12,4,2
+2024,11,Finance & IT,368,354,7,3,1
+2024,12,Finance & IT,366,355,4,5,1
+2025,1,Finance & IT,368,350,7,4,1
+2025,2,Finance & IT,369,352,6,4,1
+2025,3,Finance & IT,366,353,3,5,1
+2025,4,Finance & IT,368,354,7,4,1
+2025,5,Finance & IT,368,356,4,3,1
+2025,6,Finance & IT,369,357,7,5,1
+2025,7,Finance & IT,374,358,9,3,1
+2025,8,Finance & IT,373,360,5,4,2
+2025,9,Finance & IT,375,361,7,4,1
+2025,10,Finance & IT,371,362,2,5,1
+2025,11,Finance & IT,376,364,10,4,1
+2025,12,Finance & IT,377,365,7,4,2
+2026,1,Finance & IT,378,360,8,5,2
+2026,2,Finance & IT,380,362,8,5,1
+2026,3,Finance & IT,379,363,6,5,2
+2026,4,Finance & IT,379,364,7,5,2
+2026,5,Finance & IT,378,366,5,4,2
+2026,6,Finance & IT,377,367,6,5,2
+2026,7,Finance & IT,380,369,8,4,1
+2026,8,Finance & IT,381,370,6,4,1
+2026,9,Finance & IT,387,371,13,5,2
+2026,10,Finance & IT,386,373,5,5,1
+2026,11,Finance & IT,387,374,5,3,1
+2026,12,Finance & IT,385,375,3,4,1
+2024,1,HR & Admin,185,180,8,2,1
+2024,2,HR & Admin,192,181,9,2,0
+2024,3,HR & Admin,195,181,7,3,1
+2024,4,HR & Admin,193,182,1,2,1
+2024,5,HR & Admin,191,183,2,3,1
+2024,6,HR & Admin,195,184,7,2,1
+2024,7,HR & Admin,199,184,7,2,1
+2024,8,HR & Admin,204,185,9,3,1
+2024,9,HR & Admin,208,186,7,2,1
+2024,10,HR & Admin,208,186,4,3,1
+2024,11,HR & Admin,203,187,-2,2,1
+2024,12,HR & Admin,204,188,5,3,1
+2025,1,HR & Admin,206,185,5,2,1
+2025,2,HR & Admin,209,186,7,3,1
+2025,3,HR & Admin,212,187,6,2,1
+2025,4,HR & Admin,212,188,3,2,1
+2025,5,HR & Admin,215,188,6,2,1
+2025,6,HR & Admin,212,189,0,2,1
+2025,7,HR & Admin,211,190,3,3,1
+2025,8,HR & Admin,214,190,6,2,1
+2025,9,HR & Admin,214,191,3,2,1
+2025,10,HR & Admin,217,192,7,3,1
+2025,11,HR & Admin,212,193,-2,2,1
+2025,12,HR & Admin,211,193,2,2,1
+2026,1,HR & Admin,209,191,2,3,1
+2026,2,HR & Admin,210,192,5,3,1
+2026,3,HR & Admin,210,192,4,3,1
+2026,4,HR & Admin,207,193,0,2,1
+2026,5,HR & Admin,207,194,4,3,1
+2026,6,HR & Admin,206,194,3,3,1
+2026,7,HR & Admin,212,195,10,3,1
+2026,8,HR & Admin,209,196,1,3,1
+2026,9,HR & Admin,214,197,8,2,1
+2026,10,HR & Admin,218,197,8,3,1
+2026,11,HR & Admin,217,198,2,2,1
+2026,12,HR & Admin,217,199,3,2,1
+2024,1,R&D / Quality,158,150,11,2,1
+2024,2,R&D / Quality,165,151,8,1,0
+2024,3,R&D / Quality,163,151,1,2,1
+2024,4,R&D / Quality,164,152,2,1,0
+2024,5,R&D / Quality,166,152,3,1,0
+2024,6,R&D / Quality,165,153,2,2,1
+2024,7,R&D / Quality,168,154,4,1,0
+2024,8,R&D / Quality,165,154,0,2,1
+2024,9,R&D / Quality,162,155,-2,1,0
+2024,10,R&D / Quality,164,155,5,2,1
+2024,11,R&D / Quality,162,156,1,2,1
+2024,12,R&D / Quality,168,157,9,2,1
+2025,1,R&D / Quality,169,155,4,2,1
+2025,2,R&D / Quality,166,155,-2,1,0
+2025,3,R&D / Quality,170,156,7,2,1
+2025,4,R&D / Quality,173,156,6,2,1
+2025,5,R&D / Quality,178,157,6,1,0
+2025,6,R&D / Quality,179,158,2,1,0
+2025,7,R&D / Quality,177,158,-1,1,0
+2025,8,R&D / Quality,181,159,6,2,0
+2025,9,R&D / Quality,176,159,-3,2,0
+2025,10,R&D / Quality,178,160,5,2,1
+2025,11,R&D / Quality,175,161,-2,1,0
+2025,12,R&D / Quality,172,161,0,2,1
+2026,1,R&D / Quality,172,159,3,2,1
+2026,2,R&D / Quality,171,160,2,2,1
+2026,3,R&D / Quality,168,160,-2,1,0
+2026,4,R&D / Quality,172,161,7,2,1
+2026,5,R&D / Quality,173,161,3,2,0
+2026,6,R&D / Quality,174,162,4,2,1
+2026,7,R&D / Quality,172,163,0,2,0
+2026,8,R&D / Quality,170,163,-1,1,0
+2026,9,R&D / Quality,168,164,1,2,1
+2026,10,R&D / Quality,170,164,5,2,1
+2026,11,R&D / Quality,170,165,3,2,1
+2026,12,R&D / Quality,172,166,5,2,1
+2024,1,Procurement,130,130,1,1,0
+2024,2,Procurement,132,131,5,2,1
+2024,3,Procurement,133,131,4,2,1
+2024,4,Procurement,136,132,4,1,0
+2024,5,Procurement,143,132,10,2,1
+2024,6,Procurement,145,133,5,2,1
+2024,7,Procurement,144,133,2,2,1
+2024,8,Procurement,146,134,5,2,1
+2024,9,Procurement,149,134,6,2,1
+2024,10,Procurement,149,135,3,2,1
+2024,11,Procurement,149,135,3,2,1
+2024,12,Procurement,154,136,8,2,1
+2025,1,Procurement,157,134,5,2,0
+2025,2,Procurement,157,134,3,2,1
+2025,3,Procurement,159,135,5,2,1
+2025,4,Procurement,162,135,4,1,0
+2025,5,Procurement,166,136,7,2,1
+2025,6,Procurement,163,137,1,3,1
+2025,7,Procurement,165,137,6,3,1
+2025,8,Procurement,161,138,-1,2,1
+2025,9,Procurement,158,138,0,2,1
+2025,10,Procurement,162,139,7,2,1
+2025,11,Procurement,166,139,6,2,0
+2025,12,Procurement,168,140,5,2,1
+2026,1,Procurement,170,138,6,3,1
+2026,2,Procurement,171,138,4,2,1
+2026,3,Procurement,171,139,3,2,1
+2026,4,Procurement,165,139,-3,2,1
+2026,5,Procurement,167,140,5,2,1
+2026,6,Procurement,165,140,2,3,1
+2026,7,Procurement,166,141,5,3,1
+2026,8,Procurement,168,141,4,2,0
+2026,9,Procurement,169,142,4,2,1
+2026,10,Procurement,168,142,2,2,1
+2026,11,Procurement,169,143,4,2,1
+2026,12,Procurement,164,144,-2,2,1

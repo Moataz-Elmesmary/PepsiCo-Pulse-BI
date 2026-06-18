@@ -1,0 +1,190 @@
+Product,Category,Location,Node,Region,OnHand,ReorderPoint,InTransit,AvgDailyOut,DaysCover,OOS_Percent,Status
+Pepsi,Beverages,Manchester Plant,MAKE,UK & Ireland,1213,555,614,84,14.4,2.8,Low
+Pepsi,Beverages,Lille Plant,MAKE,France & Benelux,2084,821,1729,127,16.4,2.3,Healthy
+Pepsi,Beverages,Frankfurt Plant,MAKE,Germany & DACH,4984,1188,1298,216,23.1,2.7,Healthy
+Pepsi,Beverages,Frankfurt DC,MOVE,Germany & DACH,1068,1132,1614,168,6.4,0.2,Critical
+Pepsi,Beverages,Warsaw DC,MOVE,Poland & CEE,4306,1291,2370,224,19.2,3.4,Healthy
+Pepsi,Beverages,Cairo DC,MOVE,Levant & Egypt,2458,428,1027,66,37.2,0.5,Excess
+Pepsi,Beverages,Dubai Plant,MAKE,Gulf & Middle East,813,782,1508,103,7.9,3.6,Critical
+Pepsi Max,Beverages,Manchester Plant,MAKE,UK & Ireland,8679,1607,659,213,40.7,4,Excess
+Pepsi Max,Beverages,Valencia Plant,MAKE,Iberia,1327,302,793,53,25,0.6,Healthy
+Pepsi Max,Beverages,Lille DC,MOVE,France & Benelux,8353,1886,2641,212,39.4,1.6,Excess
+Pepsi Max,Beverages,Frankfurt Plant,MAKE,Germany & DACH,1320,814,744,126,10.5,3.2,Low
+Pepsi Max,Beverages,Cairo Plant,MAKE,Levant & Egypt,3606,1580,1486,248,14.5,0.3,Low
+Pepsi Max,Beverages,Cairo DC,MOVE,Levant & Egypt,2839,841,672,105,27,1.4,Healthy
+Diet Pepsi,Beverages,Manchester Plant,MAKE,UK & Ireland,8768,1937,3410,253,34.7,1,Excess
+Diet Pepsi,Beverages,Manchester DC,MOVE,UK & Ireland,1062,762,600,112,9.5,0.3,Low
+Diet Pepsi,Beverages,Valencia Plant,MAKE,Iberia,2782,750,1351,135,20.6,2.1,Healthy
+Diet Pepsi,Beverages,Valencia DC,MOVE,Iberia,1504,655,685,97,15.5,3.9,Healthy
+Diet Pepsi,Beverages,Frankfurt Plant,MAKE,Germany & DACH,933,686,1322,132,7.1,1.5,Critical
+Diet Pepsi,Beverages,Warsaw DC,MOVE,Poland & CEE,1122,787,869,117,9.6,0.9,Low
+Diet Pepsi,Beverages,Istanbul Plant,MAKE,Türkiye,8465,1895,1588,220,38.5,3,Excess
+Diet Pepsi,Beverages,Istanbul DC,MOVE,Türkiye,2563,1151,2163,169,15.2,0.7,Healthy
+Diet Pepsi,Beverages,Cairo Plant,MAKE,Levant & Egypt,3915,736,589,108,36.3,1,Excess
+Diet Pepsi,Beverages,Dubai DC,MOVE,Gulf & Middle East,5222,1599,2015,232,22.5,4,Healthy
+Mountain Dew,Beverages,Manchester DC,MOVE,UK & Ireland,2995,627,831,97,30.9,3.2,Healthy
+Mountain Dew,Beverages,Valencia DC,MOVE,Iberia,1705,1433,2772,198,8.6,1.9,Low
+Mountain Dew,Beverages,Lille Plant,MAKE,France & Benelux,1352,313,363,42,32.2,3.4,Healthy
+Mountain Dew,Beverages,Lille DC,MOVE,France & Benelux,3266,1271,1440,232,14.1,1.7,Low
+Mountain Dew,Beverages,Frankfurt Plant,MAKE,Germany & DACH,4318,1357,1506,196,22,2.1,Healthy
+Mountain Dew,Beverages,Warsaw Plant,MAKE,Poland & CEE,3517,783,611,102,34.5,1.5,Excess
+Mountain Dew,Beverages,Istanbul Plant,MAKE,Türkiye,1056,1107,417,144,7.3,3.2,Critical
+Mountain Dew,Beverages,Istanbul DC,MOVE,Türkiye,2575,1038,1187,118,21.8,2.8,Healthy
+Mountain Dew,Beverages,Cairo Plant,MAKE,Levant & Egypt,3457,1331,1635,156,22.2,1.4,Healthy
+Mountain Dew,Beverages,Cairo DC,MOVE,Levant & Egypt,5902,1082,2049,149,39.6,1.6,Excess
+7UP,Beverages,Manchester Plant,MAKE,UK & Ireland,3759,643,1421,102,36.9,2.5,Excess
+7UP,Beverages,Valencia Plant,MAKE,Iberia,3675,1574,3324,249,14.8,2.9,Low
+7UP,Beverages,Valencia DC,MOVE,Iberia,2454,1140,1451,159,15.4,0.6,Healthy
+7UP,Beverages,Lille Plant,MAKE,France & Benelux,8106,1268,3229,248,32.7,0,Healthy
+7UP,Beverages,Lille DC,MOVE,France & Benelux,2639,790,1003,92,28.7,2.7,Healthy
+7UP,Beverages,Frankfurt Plant,MAKE,Germany & DACH,8056,1306,1071,233,34.6,0.5,Excess
+7UP,Beverages,Warsaw Plant,MAKE,Poland & CEE,4514,1212,896,139,32.5,3.1,Healthy
+7UP,Beverages,Istanbul Plant,MAKE,Türkiye,4359,2038,2532,253,17.2,3.2,Healthy
+7UP,Beverages,Istanbul DC,MOVE,Türkiye,1515,370,632,48,31.6,0,Healthy
+7UP,Beverages,Cairo Plant,MAKE,Levant & Egypt,2694,669,516,79,34.1,3.9,Excess
+7UP,Beverages,Cairo DC,MOVE,Levant & Egypt,3255,1738,1099,232,14,1.5,Low
+7UP,Beverages,Dubai Plant,MAKE,Gulf & Middle East,2813,1503,558,243,11.6,1,Low
+7UP,Beverages,Dubai DC,MOVE,Gulf & Middle East,3440,1453,2516,200,17.2,0.3,Healthy
+Mirinda Orange,Beverages,Manchester Plant,MAKE,UK & Ireland,2475,919,2316,155,16,2.6,Healthy
+Mirinda Orange,Beverages,Valencia Plant,MAKE,Iberia,3191,873,2139,149,21.4,0.1,Healthy
+Mirinda Orange,Beverages,Valencia DC,MOVE,Iberia,2487,1103,1611,145,17.2,0.6,Healthy
+Mirinda Orange,Beverages,Lille Plant,MAKE,France & Benelux,3702,887,1992,130,28.5,3.4,Healthy
+Mirinda Orange,Beverages,Lille DC,MOVE,France & Benelux,1582,1306,3034,199,7.9,3.8,Critical
+Mirinda Orange,Beverages,Frankfurt Plant,MAKE,Germany & DACH,3063,635,432,102,30,0.6,Healthy
+Mirinda Orange,Beverages,Frankfurt DC,MOVE,Germany & DACH,3069,685,500,81,37.9,1.4,Excess
+Mirinda Orange,Beverages,Warsaw Plant,MAKE,Poland & CEE,4454,650,596,108,41.2,0.9,Excess
+Mirinda Orange,Beverages,Istanbul Plant,MAKE,Türkiye,3789,1729,2237,204,18.6,3.3,Healthy
+Mirinda Orange,Beverages,Istanbul DC,MOVE,Türkiye,4245,657,1563,106,40,3.3,Excess
+Mirinda Orange,Beverages,Cairo Plant,MAKE,Levant & Egypt,1076,552,1636,107,10.1,3.2,Low
+Mirinda Orange,Beverages,Cairo DC,MOVE,Levant & Egypt,1829,1383,748,244,7.5,1.3,Critical
+Mirinda Orange,Beverages,Dubai Plant,MAKE,Gulf & Middle East,5667,1182,2709,192,29.5,2.8,Healthy
+Mirinda Orange,Beverages,Dubai DC,MOVE,Gulf & Middle East,2847,1398,1546,174,16.4,0.2,Healthy
+Gatorade,Beverages,Manchester Plant,MAKE,UK & Ireland,7689,1662,658,215,35.8,0.2,Excess
+Gatorade,Beverages,Valencia DC,MOVE,Iberia,6887,1726,1544,192,35.9,2.7,Excess
+Gatorade,Beverages,Lille Plant,MAKE,France & Benelux,9813,1638,1902,245,40.1,2,Excess
+Gatorade,Beverages,Frankfurt Plant,MAKE,Germany & DACH,1787,290,567,50,35.7,0,Excess
+Gatorade,Beverages,Istanbul Plant,MAKE,Türkiye,1558,2134,3067,253,6.2,3.2,Critical
+Gatorade,Beverages,Istanbul DC,MOVE,Türkiye,5566,1076,973,169,32.9,0.4,Healthy
+Gatorade,Beverages,Cairo DC,MOVE,Levant & Egypt,4559,1597,2276,193,23.6,1.1,Healthy
+Aquafina,Beverages,Valencia Plant,MAKE,Iberia,396,282,292,53,7.5,0,Critical
+Aquafina,Beverages,Valencia DC,MOVE,Iberia,3202,505,613,89,36,2.1,Excess
+Aquafina,Beverages,Lille Plant,MAKE,France & Benelux,1897,626,307,82,23.1,0,Healthy
+Aquafina,Beverages,Lille DC,MOVE,France & Benelux,2280,990,1084,121,18.8,0,Healthy
+Aquafina,Beverages,Frankfurt DC,MOVE,Germany & DACH,2262,337,667,54,41.9,1.3,Excess
+Aquafina,Beverages,Warsaw DC,MOVE,Poland & CEE,2546,982,1482,162,15.7,0,Healthy
+Aquafina,Beverages,Istanbul Plant,MAKE,Türkiye,1257,261,181,43,29.2,2.4,Healthy
+Aquafina,Beverages,Cairo Plant,MAKE,Levant & Egypt,365,463,904,57,6.4,4,Critical
+Aquafina,Beverages,Cairo DC,MOVE,Levant & Egypt,2562,521,1200,88,29.1,4.2,Healthy
+Aquafina,Beverages,Dubai Plant,MAKE,Gulf & Middle East,1969,1280,2338,147,13.4,1,Low
+Lipton Ice Tea,Beverages,Manchester Plant,MAKE,UK & Ireland,4032,563,1054,107,37.7,1.7,Excess
+Lipton Ice Tea,Beverages,Manchester DC,MOVE,UK & Ireland,5293,1584,2558,188,28.2,2.2,Healthy
+Lipton Ice Tea,Beverages,Valencia Plant,MAKE,Iberia,3257,524,695,84,38.8,4.2,Excess
+Lipton Ice Tea,Beverages,Valencia DC,MOVE,Iberia,5965,1221,2272,167,35.7,1.7,Excess
+Lipton Ice Tea,Beverages,Frankfurt Plant,MAKE,Germany & DACH,3386,759,807,85,39.8,1.1,Excess
+Lipton Ice Tea,Beverages,Frankfurt DC,MOVE,Germany & DACH,3346,793,1151,117,28.6,0,Healthy
+Lipton Ice Tea,Beverages,Warsaw Plant,MAKE,Poland & CEE,3278,674,347,86,38.1,0.1,Excess
+Lipton Ice Tea,Beverages,Warsaw DC,MOVE,Poland & CEE,5268,1150,1547,213,24.7,2,Healthy
+Lipton Ice Tea,Beverages,Istanbul DC,MOVE,Türkiye,7301,1329,1048,202,36.1,0,Excess
+Lipton Ice Tea,Beverages,Cairo DC,MOVE,Levant & Egypt,6293,1361,1710,153,41.1,2.3,Excess
+Lipton Ice Tea,Beverages,Dubai Plant,MAKE,Gulf & Middle East,1213,765,999,146,8.3,0,Low
+Tropicana,Beverages,Manchester Plant,MAKE,UK & Ireland,4416,889,1993,155,28.5,0.1,Healthy
+Tropicana,Beverages,Manchester DC,MOVE,UK & Ireland,1824,1069,825,177,10.3,0.6,Low
+Tropicana,Beverages,Valencia Plant,MAKE,Iberia,6688,1978,512,227,29.5,0.6,Healthy
+Tropicana,Beverages,Valencia DC,MOVE,Iberia,529,714,847,86,6.2,0.5,Critical
+Tropicana,Beverages,Lille Plant,MAKE,France & Benelux,1967,1449,1910,189,10.4,3.4,Low
+Tropicana,Beverages,Lille DC,MOVE,France & Benelux,1955,615,237,83,23.6,2,Healthy
+Tropicana,Beverages,Frankfurt Plant,MAKE,Germany & DACH,932,569,873,65,14.3,0.9,Low
+Tropicana,Beverages,Frankfurt DC,MOVE,Germany & DACH,859,250,315,46,18.7,0.3,Healthy
+Tropicana,Beverages,Warsaw DC,MOVE,Poland & CEE,572,544,891,73,7.8,0,Critical
+Tropicana,Beverages,Istanbul DC,MOVE,Türkiye,4620,1357,1801,160,28.9,0.1,Healthy
+Tropicana,Beverages,Cairo Plant,MAKE,Levant & Egypt,3623,758,734,102,35.5,3.9,Excess
+Tropicana,Beverages,Cairo DC,MOVE,Levant & Egypt,3822,582,236,91,42,0,Excess
+Tropicana,Beverages,Dubai Plant,MAKE,Gulf & Middle East,7478,1963,1804,224,33.4,3.7,Healthy
+Tropicana,Beverages,Dubai DC,MOVE,Gulf & Middle East,2901,1432,904,198,14.7,3.3,Low
+Rockstar Energy,Beverages,Manchester Plant,MAKE,UK & Ireland,8500,1777,428,206,41.3,0.6,Excess
+Rockstar Energy,Beverages,Manchester DC,MOVE,UK & Ireland,4963,1653,3355,230,21.6,3.1,Healthy
+Rockstar Energy,Beverages,Valencia Plant,MAKE,Iberia,4747,1002,954,116,40.9,1.6,Excess
+Rockstar Energy,Beverages,Valencia DC,MOVE,Iberia,5774,1733,1167,202,28.6,0.2,Healthy
+Rockstar Energy,Beverages,Frankfurt Plant,MAKE,Germany & DACH,4178,1177,2104,155,27,0,Healthy
+Rockstar Energy,Beverages,Frankfurt DC,MOVE,Germany & DACH,3212,1738,2353,255,12.6,1.2,Low
+Rockstar Energy,Beverages,Warsaw Plant,MAKE,Poland & CEE,3462,937,1620,148,23.4,3.1,Healthy
+Rockstar Energy,Beverages,Istanbul Plant,MAKE,Türkiye,2497,633,1545,117,21.3,2.2,Healthy
+Rockstar Energy,Beverages,Istanbul DC,MOVE,Türkiye,4518,1540,2134,247,18.3,3.4,Healthy
+Rockstar Energy,Beverages,Cairo Plant,MAKE,Levant & Egypt,1512,793,973,119,12.7,2.7,Low
+Rockstar Energy,Beverages,Dubai Plant,MAKE,Gulf & Middle East,2690,913,873,114,23.6,1.1,Healthy
+Rockstar Energy,Beverages,Dubai DC,MOVE,Gulf & Middle East,2232,1089,2892,211,10.6,0.4,Low
+Sting Energy,Beverages,Manchester Plant,MAKE,UK & Ireland,1447,394,257,44,32.9,0.4,Healthy
+Sting Energy,Beverages,Manchester DC,MOVE,UK & Ireland,3162,989,907,118,26.8,0,Healthy
+Sting Energy,Beverages,Lille Plant,MAKE,France & Benelux,1873,392,120,59,31.7,1.6,Healthy
+Sting Energy,Beverages,Frankfurt Plant,MAKE,Germany & DACH,3376,743,1129,105,32.2,4.1,Healthy
+Sting Energy,Beverages,Cairo Plant,MAKE,Levant & Egypt,6085,1439,1102,185,32.9,0.8,Healthy
+Sting Energy,Beverages,Dubai Plant,MAKE,Gulf & Middle East,8743,1363,2259,219,39.9,0,Excess
+Lay's Classic,Snacks,Manchester Plant,MAKE,UK & Ireland,1403,910,664,103,13.6,0.1,Low
+Lay's Classic,Snacks,Valencia Plant,MAKE,Iberia,3020,1554,1348,193,15.6,0,Healthy
+Lay's Classic,Snacks,Valencia DC,MOVE,Iberia,2017,515,759,99,20.4,0.2,Healthy
+Lay's Classic,Snacks,Frankfurt Plant,MAKE,Germany & DACH,1880,763,1966,145,13,0,Low
+Lay's Classic,Snacks,Frankfurt DC,MOVE,Germany & DACH,5023,737,1704,133,37.8,0,Excess
+Lay's Classic,Snacks,Istanbul Plant,MAKE,Türkiye,4668,1319,3602,256,18.2,0,Healthy
+Lay's Classic,Snacks,Istanbul DC,MOVE,Türkiye,1461,410,628,54,27.1,3,Healthy
+Lay's Classic,Snacks,Cairo Plant,MAKE,Levant & Egypt,4013,900,619,133,30.2,1,Healthy
+Lay's Classic,Snacks,Cairo DC,MOVE,Levant & Egypt,2530,538,842,75,33.7,0,Healthy
+Doritos,Snacks,Manchester Plant,MAKE,UK & Ireland,596,442,277,71,8.4,1.3,Low
+Doritos,Snacks,Manchester DC,MOVE,UK & Ireland,528,349,379,42,12.6,3.6,Low
+Doritos,Snacks,Valencia Plant,MAKE,Iberia,6018,1565,2743,232,25.9,1.4,Healthy
+Doritos,Snacks,Valencia DC,MOVE,Iberia,699,444,742,75,9.3,0,Low
+Doritos,Snacks,Lille Plant,MAKE,France & Benelux,1203,1499,2209,179,6.7,0.6,Critical
+Doritos,Snacks,Lille DC,MOVE,France & Benelux,1447,470,958,61,23.7,4.1,Healthy
+Doritos,Snacks,Frankfurt Plant,MAKE,Germany & DACH,2041,947,302,140,14.6,0,Low
+Doritos,Snacks,Warsaw DC,MOVE,Poland & CEE,3562,1047,574,155,23,3.5,Healthy
+Doritos,Snacks,Istanbul DC,MOVE,Türkiye,2949,809,1149,96,30.7,2.9,Healthy
+Doritos,Snacks,Cairo Plant,MAKE,Levant & Egypt,5880,1240,3045,191,30.8,2.6,Healthy
+Doritos,Snacks,Dubai Plant,MAKE,Gulf & Middle East,4189,1274,1498,179,23.4,0.6,Healthy
+Doritos,Snacks,Dubai DC,MOVE,Gulf & Middle East,2254,1018,3115,203,11.1,0.9,Low
+Cheetos,Snacks,Manchester Plant,MAKE,UK & Ireland,1761,519,1032,81,21.7,3.1,Healthy
+Cheetos,Snacks,Lille Plant,MAKE,France & Benelux,1394,698,920,90,15.5,2.7,Healthy
+Cheetos,Snacks,Warsaw DC,MOVE,Poland & CEE,3251,521,858,80,40.6,3.6,Excess
+Cheetos,Snacks,Istanbul Plant,MAKE,Türkiye,1292,619,258,106,12.2,0.2,Low
+Cheetos,Snacks,Istanbul DC,MOVE,Türkiye,7668,2023,2930,228,33.6,1.1,Healthy
+Cheetos,Snacks,Cairo Plant,MAKE,Levant & Egypt,7357,1803,2168,201,36.6,3.8,Excess
+Cheetos,Snacks,Cairo DC,MOVE,Levant & Egypt,2031,362,737,58,35,3.8,Excess
+Ruffles,Snacks,Manchester Plant,MAKE,UK & Ireland,491,420,755,56,8.8,3.7,Low
+Ruffles,Snacks,Manchester DC,MOVE,UK & Ireland,1941,692,836,94,20.6,4.1,Healthy
+Ruffles,Snacks,Valencia Plant,MAKE,Iberia,1824,1211,1664,166,11,2.5,Low
+Ruffles,Snacks,Valencia DC,MOVE,Iberia,6417,1296,625,164,39.1,0,Excess
+Ruffles,Snacks,Lille Plant,MAKE,France & Benelux,1755,765,1203,106,16.6,2.7,Healthy
+Ruffles,Snacks,Frankfurt DC,MOVE,Germany & DACH,751,442,712,51,14.7,1.1,Low
+Ruffles,Snacks,Warsaw Plant,MAKE,Poland & CEE,1848,358,757,71,26,3.6,Healthy
+Ruffles,Snacks,Cairo Plant,MAKE,Levant & Egypt,3216,941,1289,131,24.5,0.2,Healthy
+Ruffles,Snacks,Dubai Plant,MAKE,Gulf & Middle East,4179,1077,1863,124,33.7,2.9,Healthy
+Ruffles,Snacks,Dubai DC,MOVE,Gulf & Middle East,3717,691,513,115,32.3,2.4,Healthy
+SunChips,Snacks,Manchester Plant,MAKE,UK & Ireland,6233,1257,2127,183,34.1,0.5,Excess
+SunChips,Snacks,Valencia Plant,MAKE,Iberia,3672,1023,760,124,29.6,0.7,Healthy
+SunChips,Snacks,Lille DC,MOVE,France & Benelux,4767,1349,1412,215,22.2,2.1,Healthy
+SunChips,Snacks,Frankfurt Plant,MAKE,Germany & DACH,5180,1275,2830,188,27.6,0.1,Healthy
+SunChips,Snacks,Frankfurt DC,MOVE,Germany & DACH,4518,1665,1949,201,22.5,2.5,Healthy
+SunChips,Snacks,Warsaw Plant,MAKE,Poland & CEE,2084,901,2416,172,12.1,1.5,Low
+SunChips,Snacks,Warsaw DC,MOVE,Poland & CEE,3951,1178,2973,203,19.5,0.4,Healthy
+SunChips,Snacks,Istanbul DC,MOVE,Türkiye,2946,1399,1986,198,14.9,0,Low
+Walkers,Snacks,Manchester DC,MOVE,UK & Ireland,1903,401,249,71,26.8,0.9,Healthy
+Walkers,Snacks,Lille Plant,MAKE,France & Benelux,2193,1120,1913,135,16.2,2.1,Healthy
+Walkers,Snacks,Lille DC,MOVE,France & Benelux,989,649,494,80,12.4,3.1,Low
+Walkers,Snacks,Frankfurt DC,MOVE,Germany & DACH,1201,1312,2386,184,6.5,2.8,Critical
+Walkers,Snacks,Istanbul Plant,MAKE,Türkiye,1951,535,626,81,24.1,0.7,Healthy
+Walkers,Snacks,Istanbul DC,MOVE,Türkiye,1238,986,1037,122,10.1,3.9,Low
+Walkers,Snacks,Dubai Plant,MAKE,Gulf & Middle East,7824,1608,1882,188,41.6,2.7,Excess
+Walkers,Snacks,Dubai DC,MOVE,Gulf & Middle East,3621,717,255,104,34.8,0.4,Excess
+Quaker Oats,Foods,Manchester DC,MOVE,UK & Ireland,2404,574,1361,86,28,1.3,Healthy
+Quaker Oats,Foods,Valencia Plant,MAKE,Iberia,5721,1023,902,156,36.7,3.5,Excess
+Quaker Oats,Foods,Lille DC,MOVE,France & Benelux,1244,832,1521,154,8.1,0,Low
+Quaker Oats,Foods,Frankfurt DC,MOVE,Germany & DACH,1395,1259,524,225,6.2,2,Critical
+Quaker Oats,Foods,Warsaw DC,MOVE,Poland & CEE,1322,578,315,66,20,4.1,Healthy
+Quaker Oats,Foods,Dubai DC,MOVE,Gulf & Middle East,5186,930,1864,133,39,3.9,Excess
+Quaker Granola,Foods,Manchester DC,MOVE,UK & Ireland,719,485,891,60,12,2.6,Low
+Quaker Granola,Foods,Valencia Plant,MAKE,Iberia,3859,891,510,101,38.2,1.7,Excess
+Quaker Granola,Foods,Valencia DC,MOVE,Iberia,1631,1022,1988,179,9.1,0.1,Low
+Quaker Granola,Foods,Lille DC,MOVE,France & Benelux,3664,788,1366,97,37.8,1.1,Excess
+Quaker Granola,Foods,Frankfurt Plant,MAKE,Germany & DACH,3133,1867,2800,222,14.1,2.1,Low
+Quaker Granola,Foods,Warsaw Plant,MAKE,Poland & CEE,7467,1179,1017,235,31.8,4.1,Healthy
+Quaker Granola,Foods,Istanbul DC,MOVE,Türkiye,1293,956,2721,173,7.5,1.5,Critical
+Quaker Granola,Foods,Dubai Plant,MAKE,Gulf & Middle East,2457,1107,1146,152,16.2,1.3,Healthy
+Quaker Granola,Foods,Dubai DC,MOVE,Gulf & Middle East,2951,964,1454,108,27.3,1,Healthy

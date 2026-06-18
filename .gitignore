@@ -1,0 +1,13 @@
+# local browser profile used for screenshots
+.chrome-tmp/
+
+# generation source art / legacy raw file (not needed to run or build)
+ChatGPT Image*.png
+PepsiCo_EMEA_Sales_Database.xlsx
+
+# node
+node_modules/
+
+# scratch
+_ac.js
+_appcheck.js

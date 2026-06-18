@@ -1,0 +1,83 @@
+Position,Function,Area,PlanHeadcount,ActualHeadcount,Gap,InPipeline,InNotice
+Line Operator,MAKE,UK & Ireland,27,24,-3,4,3
+Line Operator,MAKE,Iberia,45,42,-3,4,4
+Line Operator,MAKE,Poland & CEE,55,53,-2,1,2
+Line Operator,MAKE,Levant & Egypt,34,30,-4,5,2
+Line Operator,MAKE,Gulf & Middle East,24,20,-4,4,1
+Maintenance Tech,MAKE,UK & Ireland,52,52,0,0,2
+Maintenance Tech,MAKE,Iberia,59,55,-4,6,2
+Maintenance Tech,MAKE,France & Benelux,43,43,0,0,4
+Maintenance Tech,MAKE,Germany & DACH,23,21,-2,1,2
+Maintenance Tech,MAKE,Poland & CEE,20,17,-3,2,4
+Maintenance Tech,MAKE,Türkiye,26,22,-4,5,1
+Maintenance Tech,MAKE,Gulf & Middle East,17,17,0,0,3
+Quality Inspector,MAKE,Iberia,8,7,-1,1,4
+Quality Inspector,MAKE,Germany & DACH,38,36,-2,1,4
+Quality Inspector,MAKE,Türkiye,11,10,-1,1,3
+Quality Inspector,MAKE,Gulf & Middle East,43,41,-2,3,1
+Forklift Operator,MOVE,UK & Ireland,47,47,0,0,2
+Forklift Operator,MOVE,Iberia,10,9,-1,1,2
+Forklift Operator,MOVE,France & Benelux,40,34,-6,4,2
+Forklift Operator,MOVE,Türkiye,48,43,-5,4,3
+Truck Driver,MOVE,UK & Ireland,21,19,-2,1,3
+Truck Driver,MOVE,Iberia,19,17,-2,1,2
+Truck Driver,MOVE,Germany & DACH,33,30,-3,5,0
+Truck Driver,MOVE,Türkiye,23,20,-3,4,0
+Truck Driver,MOVE,Levant & Egypt,56,57,1,1,0
+Truck Driver,MOVE,Gulf & Middle East,57,49,-8,10,3
+Warehouse Picker,MOVE,UK & Ireland,30,28,-2,1,1
+Warehouse Picker,MOVE,Iberia,18,17,-1,1,0
+Warehouse Picker,MOVE,France & Benelux,54,47,-7,3,4
+Warehouse Picker,MOVE,Poland & CEE,35,36,1,1,3
+Warehouse Picker,MOVE,Türkiye,29,27,-2,2,2
+Warehouse Picker,MOVE,Levant & Egypt,28,28,0,0,1
+Warehouse Picker,MOVE,Gulf & Middle East,17,16,-1,1,1
+Dispatcher,MOVE,UK & Ireland,58,60,2,2,3
+Dispatcher,MOVE,France & Benelux,34,35,1,1,2
+Dispatcher,MOVE,Germany & DACH,22,21,-1,1,0
+Dispatcher,MOVE,Poland & CEE,49,49,0,0,3
+Dispatcher,MOVE,Türkiye,16,17,1,1,4
+Dispatcher,MOVE,Levant & Egypt,31,31,0,0,1
+Dispatcher,MOVE,Gulf & Middle East,26,27,1,1,0
+Sales Rep,Commercial,UK & Ireland,21,18,-3,3,4
+Sales Rep,Commercial,Iberia,36,38,2,3,4
+Sales Rep,Commercial,France & Benelux,48,50,2,2,2
+Sales Rep,Commercial,Germany & DACH,42,38,-4,6,0
+Sales Rep,Commercial,Poland & CEE,41,35,-6,3,0
+Sales Rep,Commercial,Türkiye,11,11,0,0,1
+Sales Rep,Commercial,Levant & Egypt,25,21,-4,4,4
+Key Account Mgr,Commercial,UK & Ireland,53,48,-5,7,3
+Key Account Mgr,Commercial,Iberia,50,45,-5,7,2
+Key Account Mgr,Commercial,France & Benelux,58,60,2,2,3
+Key Account Mgr,Commercial,Germany & DACH,24,22,-2,2,0
+Key Account Mgr,Commercial,Poland & CEE,30,28,-2,2,1
+Key Account Mgr,Commercial,Levant & Egypt,27,28,1,1,1
+Key Account Mgr,Commercial,Gulf & Middle East,28,26,-2,2,2
+Merchandiser,Commercial,UK & Ireland,24,24,0,0,3
+Merchandiser,Commercial,Iberia,30,28,-2,2,3
+Merchandiser,Commercial,France & Benelux,53,50,-3,3,2
+Merchandiser,Commercial,Germany & DACH,13,13,0,0,0
+Merchandiser,Commercial,Poland & CEE,26,22,-4,4,1
+Merchandiser,Commercial,Türkiye,33,29,-4,4,1
+Merchandiser,Commercial,Levant & Egypt,43,37,-6,7,4
+Brand Manager,Commercial,Iberia,23,24,1,1,2
+Brand Manager,Commercial,France & Benelux,32,30,-2,3,1
+Brand Manager,Commercial,Germany & DACH,46,40,-6,8,4
+Brand Manager,Commercial,Poland & CEE,36,32,-4,4,1
+Brand Manager,Commercial,Türkiye,16,16,0,0,2
+Brand Manager,Commercial,Levant & Egypt,32,33,1,2,2
+Brand Manager,Commercial,Gulf & Middle East,13,12,-1,1,2
+Financial Analyst,Support,UK & Ireland,19,16,-3,2,3
+Financial Analyst,Support,Iberia,50,43,-7,9,2
+Financial Analyst,Support,France & Benelux,47,42,-5,4,2
+Financial Analyst,Support,Germany & DACH,20,21,1,1,4
+Financial Analyst,Support,Türkiye,13,11,-2,1,0
+Financial Analyst,Support,Levant & Egypt,48,47,-1,1,2
+Financial Analyst,Support,Gulf & Middle East,44,45,1,1,2
+IT Specialist,Support,UK & Ireland,37,36,-1,1,2
+IT Specialist,Support,Iberia,56,51,-5,8,2
+IT Specialist,Support,France & Benelux,9,8,-1,1,4
+IT Specialist,Support,Poland & CEE,30,31,1,1,1
+IT Specialist,Support,Türkiye,15,15,0,0,3
+IT Specialist,Support,Levant & Egypt,47,47,0,0,4
+IT Specialist,Support,Gulf & Middle East,16,14,-2,1,0

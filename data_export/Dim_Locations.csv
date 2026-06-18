@@ -1,0 +1,17 @@
+Location,Node,Region
+Manchester Plant,MAKE,UK & Ireland
+Manchester DC,MOVE,UK & Ireland
+Valencia Plant,MAKE,Iberia
+Valencia DC,MOVE,Iberia
+Lille Plant,MAKE,France & Benelux
+Lille DC,MOVE,France & Benelux
+Frankfurt Plant,MAKE,Germany & DACH
+Frankfurt DC,MOVE,Germany & DACH
+Warsaw Plant,MAKE,Poland & CEE
+Warsaw DC,MOVE,Poland & CEE
+Istanbul Plant,MAKE,Türkiye
+Istanbul DC,MOVE,Türkiye
+Cairo Plant,MAKE,Levant & Egypt
+Cairo DC,MOVE,Levant & Egypt
+Dubai Plant,MAKE,Gulf & Middle East
+Dubai DC,MOVE,Gulf & Middle East
