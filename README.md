@@ -46,7 +46,6 @@
 5. [How it works (architecture)](#-architecture)
 6. [Project structure](#-project-structure)
 7. [Build & regenerate](#-build--regenerate)
-8. [Deployment](#-deployment)
 9. [Tech stack](#-tech-stack)
 
 ---
@@ -203,17 +202,6 @@ node screenshot.js     # regenerate docs/screenshots/*.png
 
 Want **more data**? Add rows to `PRODUCTS` / `REGIONS` / `CHANNELS` (or change `YEARS`) in `gen.js` and re-run `node build.js`.
 
----
-
-## 🌐 Deployment
-
-It's a static file, so any static host works:
-
-- **Netlify Drop** — drag `PepsiCo_Pulse_BI.html` onto <https://app.netlify.com/drop> for an instant link.
-- **GitHub Pages** — rename to `index.html`, enable Pages, done.
-- **Company server** — drop it in SharePoint / IIS / Nginx.
-
-For a **100% offline** build, download `chart.umd.min.js` + `chartjs-plugin-datalabels` and the fonts next to the file and swap the CDN links for local paths. Full step-by-step (Arabic) in [`README_PUBLISH.md`](README_PUBLISH.md).
 
 ---
 
