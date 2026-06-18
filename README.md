@@ -226,4 +226,4 @@ For a **100% offline** build, download `chart.umd.min.js` + `chartjs-plugin-data
 
 ---
 
-<p align="center"><sub>Sample/portfolio project · not affiliated with PepsiCo · data is synthetic.</sub></p>
+<p align="center"><sub>Sample · not affiliated with PepsiCo .</sub></p>
